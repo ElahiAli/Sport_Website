@@ -1,0 +1,547 @@
+{% extends 'sport_news/base.html' %}
+{% load static %}
+
+{% block content %}
+<!--************************************
+				Banner Start
+		*************************************-->
+		<div class="tg-banner tg-haslayout">
+			<div class="tg-imglayer">
+				<img src="{% static 'mysite/images/bg-pattran.png' %}" alt="image desctription">
+			</div>
+			<div class="container">
+				<div class="row">
+					<div class="tg-banner-content tg-haslayout">
+						<div class="tg-pagetitle">
+							<h1>about us</h1>
+						</div>
+						<ol class="tg-breadcrumb">
+							<li><a href="#">Home</a></li>
+							<li class="active">About Us</li>
+						</ol>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--************************************
+				Banner End
+		*************************************-->
+		<!--************************************
+				Main Start
+		*************************************-->
+		<main id="tg-main" class="tg-main tg-haslayout">
+			<!--************************************
+					About Us Start
+			*************************************-->
+			<section class="tg-main-section tg-haslayout">
+				<div class="container">
+					<div class="tg-section-name">
+						<h2>About pro soccer</h2>
+					</div>
+					<div class="col-sm-11 col-xs-11 pull-right">
+						<div class="row">
+							<div class="tg-aboutussection">
+								<div class="row">
+									<div class="col-md-6 col-sm-12 col-xs-12">
+										<figure>
+											<img src="{{pro.images.url}}" alt="image description" height="321" width="570">
+										</figure>
+									</div>
+									<div class="col-md-6 col-sm-12 col-xs-12">
+										<div class="tg-contentbox">
+											<div class="tg-section-heading"><h2>{{pro.header}}</h2></div>
+											<div class="tg-description">
+												<p>{{pro.explain}}</p>
+											</div>
+											<div class="tg-btnbox">
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!--************************************
+					About Us End
+			*************************************-->
+			<!--************************************
+					Statistics Start
+			*************************************-->
+			<section class="tg-main-section tg-haslayout tg-bgdark">
+				<div class="container">
+					<div class="row">
+						<div class="col-sm-12 col-xs-12">
+							<div class="tg-statistics">
+								<div class="tg-statistic tg-goals">
+									<span class="tg-icon icon-Icon1"></span>
+									<h2><span class="tg-statistic-count" data-from="0" data-to="{{honor.number_of_goals}}" data-speed="8000" data-refresh-interval="50">{{honor.number_of_goals}}</span></h2>
+									<h3>Goals</h3>
+								</div>
+								<div class="tg-statistic tg-activeplayers">
+									<span class="tg-icon icon-Icon2"></span>
+									<h2><span class="tg-statistic-count" data-from="0" data-to="{{honor.active_player}}" data-speed="8000" data-refresh-interval="50">{{honor.active_player}}</span></h2>
+									<h3>Active players</h3>
+								</div>
+								<div class="tg-statistic tg-activeteams">
+									<span class="tg-icon icon-Icon3"></span>
+									<h2><span class="tg-statistic-count" data-from="0" data-to="{{honor.active_teams}}" data-speed="8000" data-refresh-interval="50">{{honor.active_teams}}</span></h2>
+									<h3>Active coach</h3>
+								</div>
+								<div class="tg-statistic tg-earnedawards">
+									<span class="tg-icon icon-Icon4"></span>
+									<h2><span class="tg-statistic-count" data-from="0" data-to="{{honor.earned_awards}}" data-speed="8000" data-refresh-interval="50">{{honor.earned_awards}}</span></h2>
+									<h3>Awards</h3>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!--************************************
+					Statistics End
+			*************************************-->
+			<!--************************************
+					Pre Score Histroty Start
+			*************************************-->
+			<section class="tg-main-section tg-haslayout">
+				<div class="container">
+					<div class="tg-section-name">
+						<h2>pro soccer History</h2>
+					</div>
+					<div class="col-sm-11 col-xs-11 pull-right">
+						<div class="row">
+							<div class="tg-prohistory tg-border-top tg-haslayout">
+								<div class="row">
+									{% for info in video %}
+										<div class="col-md-3 col-sm-6 col-xs-6">
+											<article class="tg-post">
+												<figure class="tg-postimg">
+													<a class="tg-playbtn" href="{{info.video_url}}?iframe=true" data-rel="prettyPhoto[iframe]"></a>
+													<img src="{% static 'mysite/images/dortmund.jpg' %}" alt="image description">
+													<figcaption>
+														<ul class="tg-postmetadata">
+															<li><a href="#">posted on {{info.date}}</a></li>
+														</ul>
+													</figcaption>
+												</figure>
+												<div class="tg-posttitle">
+													<h3><a href="#">{{info.title}}</a></h3>
+												</div>
+												<div class="tg-description">
+													<p>{{info.description}}</p>
+												</div>
+											</article>
+										</div>
+									{% endfor %}
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!--************************************
+					Pre Score Histroty End
+			*************************************-->
+			<!--************************************
+					Video Start
+			*************************************-->
+			<section class="tg-videobox tg-haslayout">
+				<figure>
+					<img src="{% static 'mysite/images/bg-video.jpg' %}" alt="image description">
+					<figcaption>
+						<a class="tg-playbtn" href="https://www.youtube.com/watch?v=YkFIBS35oV0?iframe=true" data-rel="prettyPhoto[iframe]"></a>
+						<h2>accusantium doloremque lauda totam rem aperiam ipsa</h2>
+					</figcaption>
+				</figure>
+			</section>
+			<!--************************************
+					Video End
+			*************************************-->
+			<!--************************************
+					men Player Start
+			*************************************-->
+			<section class="tg-main-section tg-haslayout">
+				<div class="container">
+					<div class="tg-section-name">
+						<h2>men Player</h2>
+					</div>
+					<div class="col-sm-11 col-xs-11 pull-right">
+						<div class="row">
+							<div class="tg-topratedplayer tg-haslayout">
+								<div class="row">
+									<div class="col-md-7 col-sm-12 col-xs-12">
+										<div id="tg-playerscrollbar" class="tg-players tg-playerscrollbar">
+											{% for data in men %}
+												<div class="tg-player">
+													<div class="col-sm-6 col-xs-6 pull-right">
+														<div class="tg-playcontent">
+															<a class="tg-theme-tag" href="#">{{data.post}}</a>
+															<h3><a href="#">{{data.full_name}}</a></h3>
+															<div class="tg-description">
+																<p>{{data.description}}</p>
+															</div>
+															<ul class="tg-socialicons">
+																<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+																<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+																<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+																<li><a href="#"><i class="fa fa-dribbble"	></i></a></li>
+															</ul>
+														</div>
+													</div>
+													<div class="col-sm-6 col-xs-6">
+														<figure>
+															<a href="#">
+																<img src="{{data.image.url}}" alt="{{data.full_name}}">
+															</a>
+														</figure>
+													</div>
+												</div>
+											{% endfor %}
+										</div>
+									</div>
+									<div class="col-md-5 col-sm-12 col-xs-12">
+										<div class="tg-contentbox">
+											<div class="tg-section-heading"><h2>Borussia Dortmund</h2></div>
+											<div class="tg-description">
+												<p>Ballspielverein Borussia 09 e. V. Dortmund, commonly known as Borussia Dortmund, BVB, or simply Dortmund,
+													 is a German professional sports club based in Dortmund, North Rhine-Westphalia.
+													<a href="https://en.wikipedia.org/wiki/Borussia_Dortmund">Wikipedia</a>
+												</p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!--************************************
+					men Player End
+			*************************************-->
+			<!--************************************
+					Testimonials Start
+			*************************************-->
+			<section class="tg-testimonial tg-haslayout tg-bgdark">
+				<div class="container">
+					<div class="row">
+						<div id="tg-testimonial-slider" class="tg-testimonial-slider tg-haslayout">
+							<div class="swiper-wrapper">
+								<div class="swiper-slide">
+									<figure>
+										<img src="{% static 'mysite/images/147.png' %}" alt="image description">
+									</figure>
+									<div class="tg-contentbox">
+										<div class="tg-section-heading">
+											<h2>1X CHAMPIONS LEAGUE WINNER</h2>
+										</div>
+										<div class="tg-description">
+											<p>Consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore et dolorena aliqua enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur sint occaecat.</p>
+										</div>
+										<ul class="tg-socialicons">
+											<li>
+												<a href="#">
+													<i class="fa fa-facebook"></i>
+												</a>
+											</li>
+											<li>
+												<a href="#">
+													<i class="fa fa-twitter"></i>
+												</a>
+											</li>
+											<li>
+												<a href="#">
+													<i class="fa fa-linkedin"></i>
+												</a>
+											</li>
+											<li>
+												<a href="#">
+													<i class="fa fa-dribbble"></i>
+												</a>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<div class="swiper-slide">
+									<figure>
+										<img src="{% static 'mysite/images/g0.png' %}" alt="image description">
+									</figure>
+									<div class="tg-contentbox">
+										<div class="tg-section-heading">
+											<h2>8X GERMAN CHAMPION</h2>
+										</div>
+										<div class="tg-description">
+											<p>Consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore et dolorena aliqua enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur sint occaecat.</p>
+										</div>
+										<ul class="tg-socialicons">
+											<li>
+												<a href="#">
+													<i class="fa fa-facebook"></i>
+												</a>
+											</li>
+											<li>
+												<a href="#">
+													<i class="fa fa-twitter"></i>
+												</a>
+											</li>
+											<li>
+												<a href="#">
+													<i class="fa fa-linkedin"></i>
+												</a>
+											</li>
+											<li>
+												<a href="#">
+													<i class="fa fa-dribbble"></i>
+												</a>
+											</li>
+										</ul>
+									</div>
+								</div>
+								
+								<div class="swiper-slide">
+									<figure>
+										<img src="{% static 'mysite/images/g2.png' %}" alt="image description">
+									</figure>
+									<div class="tg-contentbox">
+										<div class="tg-section-heading">
+											<h2>5X GERMAN CUP WINNER</h2>
+										</div>
+										<div class="tg-description">
+											<p>Consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore et dolorena aliqua enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur sint occaecat.</p>
+										</div>
+										<ul class="tg-socialicons">
+											<li>
+												<a href="#">
+													<i class="fa fa-facebook"></i>
+												</a>
+											</li>
+											<li>
+												<a href="#">
+													<i class="fa fa-twitter"></i>
+												</a>
+											</li>
+											<li>
+												<a href="#">
+													<i class="fa fa-linkedin"></i>
+												</a>
+											</li>
+											<li>
+												<a href="#">
+													<i class="fa fa-dribbble"></i>
+												</a>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<div class="swiper-slide">
+									<figure>
+										<img src="{% static 'mysite/images/g3.png' %}" alt="image description">
+									</figure>
+									<div class="tg-contentbox">
+										<div class="tg-section-heading">
+											<h2>1X CUP WINNERS CUP WINNER</h2>
+										</div>
+										<div class="tg-description">
+											<p>Consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore et dolorena aliqua enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur sint occaecat.</p>
+										</div>
+										<ul class="tg-socialicons">
+											<li>
+												<a href="#">
+													<i class="fa fa-facebook"></i>
+												</a>
+											</li>
+											<li>
+												<a href="#">
+													<i class="fa fa-twitter"></i>
+												</a>
+											</li>
+											<li>
+												<a href="#">
+													<i class="fa fa-linkedin"></i>
+												</a>
+											</li>
+											<li>
+												<a href="#">
+													<i class="fa fa-dribbble"></i>
+												</a>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<div class="swiper-slide">
+									<figure>
+										<img src="{% static 'mysite/images/g4.png' %}" alt="image description">
+									</figure>
+									<div class="tg-contentbox">
+										<div class="tg-section-heading">
+											<h2>6X GERMAN SUPER CUP WINNER</h2>
+										</div>
+										<div class="tg-description">
+											<p>Consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore et dolorena aliqua enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur sint occaecat.</p>
+										</div>
+										<ul class="tg-socialicons">
+											<li>
+												<a href="#">
+													<i class="fa fa-facebook"></i>
+												</a>
+											</li>
+											<li>
+												<a href="#">
+													<i class="fa fa-twitter"></i>
+												</a>
+											</li>
+											<li>
+												<a href="#">
+													<i class="fa fa-linkedin"></i>
+												</a>
+											</li>
+											<li>
+												<a href="#">
+													<i class="fa fa-dribbble"></i>
+												</a>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<div class="tg-themebtnprev"><span class="fa fa-angle-left"></span></div>
+							<div class="tg-themebtnnext"><span class="fa fa-angle-right"></span></div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!--************************************
+					Testimonials End
+			*************************************-->
+			
+			<!--************************************
+					Our Sponser Start
+			*************************************-->
+			<section class="tg-main-section tg-haslayout">
+				<div class="container">
+					<div class="col-sm-11 col-xs-11 pull-right">
+						<div class="row">
+							<div class="tg-latestresult tg-oursponsers">
+								<div class="row">
+									<div class="col-md-5 col-sm-12 col-xs-12">
+										<div class="tg-contentbox">
+											<div class="tg-section-heading"><h2>our sponsers</h2></div>
+											<div class="tg-description">
+												<p>Dortmund's main advertising partner and current shirt sponsor is Evonik. The insurance company Signal Iduna purchased the rights to name the Westfalenstadion Signal Iduna Park until 2021. The main equipment supplier is Puma since the 2012–13 season.</p>
+											</div>
+										</div>
+									</div>
+									<div class="col-md-7 col-sm-12 col-xs-12">
+										<div id="tg-upcomingmatch-slider" class="tg-upcomingmatch-slider tg-upcomingmatch">
+											<div class="swiper-wrapper">
+												<div class="swiper-slide">
+													<div class="tg-match">
+														<div class="tg-matchdetail">
+															<div class="tg-box">
+																<strong class="tg-teamlogo">
+																	<img src="{% static 'mysite/images/sponser/img-01.png' %}" alt="image description">
+																</strong>
+															</div>
+															<div class="tg-box">
+																<span>sponsored in 2016</span>
+																<h3>Champions league</h3>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="swiper-slide">
+													<div class="tg-match">
+														<div class="tg-matchdetail">
+															<div class="tg-box">
+																<strong class="tg-teamlogo">
+																	<img src="{% static 'mysite/images/sponser/img-02.png' %}" alt="image description">
+																</strong>
+															</div>
+															<div class="tg-box">
+																<span>sponsored in 2016</span>
+																<h3>Champions league</h3>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="swiper-slide">
+													<div class="tg-match">
+														<div class="tg-matchdetail">
+															<div class="tg-box">
+																<strong class="tg-teamlogo">
+																	<img src="{% static 'mysite/images/sponser/img-03.png' %}" alt="image description">
+																</strong>
+															</div>
+															<div class="tg-box">
+																<span>sponsored in 2016</span>
+																<h3>Champions league</h3>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="swiper-slide">
+													<div class="tg-match">
+														<div class="tg-matchdetail">
+															<div class="tg-box">
+																<strong class="tg-teamlogo">
+																	<img src="{% static 'mysite/images/sponser/img-01.png' %}" alt="image description">
+																</strong>
+															</div>
+															<div class="tg-box">
+																<span>sponsored in 2016</span>
+																<h3>Champions league</h3>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="swiper-slide">
+													<div class="tg-match">
+														<div class="tg-matchdetail">
+															<div class="tg-box">
+																<strong class="tg-teamlogo">
+																	<img src="{% static 'mysite/images/sponser/img-02.png' %}" alt="image description">
+																</strong>
+															</div>
+															<div class="tg-box">
+																<span>sponsored in 2016</span>
+																<h3>Champions league</h3>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="swiper-slide">
+													<div class="tg-match">
+														<div class="tg-matchdetail">
+															<div class="tg-box">
+																<strong class="tg-teamlogo">
+																	<img src="{% static 'mysite/images/sponser/img-03.png' %}" alt="image description">
+																</strong>
+															</div>
+															<div class="tg-box">
+																<span>sponsored in 2016</span>
+																<h3>Champions league</h3>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="tg-themebtnnext"><span class="fa fa-angle-down"></span></div>
+											<div class="tg-themebtnprev"><span class="fa fa-angle-up"></span></div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!--************************************
+					Our Sponser End
+			*************************************-->
+		</main>
+		<!--************************************
+				Main End
+		*************************************-->
+{% endblock %}

@@ -1,0 +1,83 @@
+{% extends 'sport_news/base.html' %}
+{% load static %}
+
+{% block content %}
+<!--************************************
+				Banner Start
+		*************************************-->
+		<div class="tg-banner tg-haslayout">
+			<div class="tg-imglayer">
+				<img src="{% static 'mysite/images/bg-pattran.png' %}" alt="image desctription">
+			</div>
+			<div class="container">
+				<div class="row">
+					<div class="tg-banner-content tg-haslayout">
+						<div class="tg-pagetitle">
+							<h1>Cart</h1>
+						</div>
+						<ol class="tg-breadcrumb">
+							<li><a href="#">Home</a></li>
+							<li class="active">Shop / Cart</li>
+						</ol>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--************************************
+				Banner End
+		*************************************-->
+		<!--************************************
+				Main Start
+		*************************************-->
+		<main id="tg-main" class="tg-main tg-haslayout">
+			<section class="tg-main-section tg-haslayout">
+				<div class="container">
+					<div class="tg-section-name">
+						<h2>product-list</h2>
+					</div>
+					<div class="col-sm-11 col-xs-11 pull-right">
+						<div class="row">
+							<ul class="tg-tickets tg-tabnav" role="tablist">
+								{% for info in order %}
+									<li role="presentation" class="active">
+										<a href="#one" aria-controls="one" role="tab" data-toggle="tab">
+											<div class="tg-ticket">
+												<div class="tg-matchdetail">
+													<span class="tg-theme-tag">{{info.product.tag}}</span>
+													<h4>{{info.product.title}} </h4>
+													<ul class="tg-matchmetadata">
+														<li><number datetime="2016-05-03">count = {{info.count}}</number></li>
+														<li><size>size = {{info.size}}</size></li>
+														<li><price>price = {{info.product.price}} $</price></li>
+													</ul>
+												</div>
+												<div><img src="{{info.product.image.url}}" width="71" height="83">
+												<a  class="tg-btn tg-btnaddtocart" type="submit" href="{% url 'sport_news:cart-delete' info.id %}">Delete</a></div>							
+											</div>
+										</a>
+									</li>
+								{% endfor %}
+							</ul>
+							<ul role="presentation" class="active">
+								<a href="#one" aria-controls="one" role="tab" data-toggle="tab">
+									<div class="tg-ticket">
+										<div class="tg-matchdetail">
+											<span class="tg-theme-tag">Total</span>
+											<h4>Total price = {{total.count}}</h4>
+										</div>
+										
+										<a  class="tg-btn tg-btnaddtocart" type="submit" href="{% url 'sport_news:payment' %}">Payment</a>
+									</div>
+								</a>
+							</ul>				
+						</div>
+					</div>
+				</div>
+			</section>
+		</main>
+		<!--************************************
+				Main End
+		*************************************-->
+
+
+{% endblock %}

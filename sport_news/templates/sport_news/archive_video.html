@@ -1,0 +1,80 @@
+{% extends 'sport_news/base.html' %}
+{% load static %}
+
+
+{% block content %}
+		<!--************************************
+				Banner Start
+		*************************************-->
+		<div class="tg-banner tg-haslayout">
+			<div class="tg-imglayer">
+				<img src="{% static 'mysite/images/bg-pattran.png' %}" alt="image desctription">
+			</div>
+			<div class="container">
+				<div class="row">
+					<div class="tg-banner-content tg-haslayout">
+						<div class="tg-pagetitle">
+							<h1>Media</h1>
+						</div>
+						<ol class="tg-breadcrumb">
+							<li><a href="#">Home</a></li>
+							<li class="active">Archive-Media</li>
+						</ol>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--************************************
+				Banner End
+		*************************************-->
+		<!--************************************
+				Main Start
+		*************************************-->
+		<main id="tg-main" class="tg-main tg-haslayout">
+			<!--************************************
+					Soccer Media Start
+			*************************************-->
+			<section class="tg-main-section tg-soccermedia tg-haslayout">
+				<div class="container">
+					<div class="col-sm-12 col-xs-11 pull-right">
+						<div class="row">
+							<div class="tg-tg-soccermedia-head tg-haslayout">
+								<ul id="tg-filterbale-nav" class="tg-filterbale-nav option-set">
+									<li><a class="active" data-filter="*" href="javascript:void(0);">All</a></li>
+									<li><a data-filter=".laliga" href="javascript:void(0);">La Liga</a></li>
+									<li><a data-filter=".championship" href="javascript:void(0);">Championship</a></li>
+									<!-- <li><a data-filter=".scottishpremiership" href="javascript:void(0);">scottish Premiership</a></li> -->
+									<li><a data-filter=".bundesliga" href="javascript:void(0);">Bundesliga</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div id="tg-soccermediascrollbar" class="tg-soccermediascrollbar">
+					<div id="filter-masonry" class="tg-soccermedia-content tg-haslayout">
+						{% for i in video %}
+							<div class="masonry-grid {{i.league_type}}">
+								<div class="tg-project">
+									<figure class="tg-postimg">
+										<a data-rel="prettyPhoto[iframe]" href="{{i.video_url}}?iframe=true&amp;" class="tg-playbtn"></a>
+										<img src="{% static 'mysite/images/dortmund.jpg' %}" width="384" height="500" alt="image description">
+										<figcaption>
+											<a class="tg-theme-tag">in {{i.date}}</a>
+											<h3>{{i.title}}</h3>
+										</figcaption>
+									</figure>
+								</div>
+							</div>
+						{% endfor %}
+						
+					</div>
+				</div>
+			</section>
+			<!--************************************
+					Soccer Media End
+			*************************************-->
+		</main>
+		<!--************************************
+				Main End
+		*************************************-->
+{% endblock %}

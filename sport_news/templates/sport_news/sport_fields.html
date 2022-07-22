@@ -1,0 +1,62 @@
+{% extends 'sport_news/base.html' %}
+{% load static %}
+
+{% block content %}
+	<!--************************************
+				Banner Start
+		*************************************-->
+		<div class="tg-banner tg-haslayout">
+			<div class="tg-imglayer">
+				<img src="{% static 'mysite/images/bg-pattran.png' %}" alt="image desctription">
+			</div>
+			<div class="container">
+				<div class="row">
+					<div class="tg-banner-content tg-haslayout">
+						<div class="tg-pagetitle">
+							<h1>Sport / Fields</h1>
+						</div>
+						<ol class="tg-breadcrumb">
+							<li><a href="#">Home</a></li>
+							<li class="active">Fields-Fitness</li>
+						</ol>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--************************************
+				Banner End
+		*************************************-->
+        <!--************************************
+				Main Start
+		*************************************-->
+		<main id="tg-main" class="tg-main tg-paddingbottom-zero tg-haslayout">
+			<section class="tg-main-section tg-paddingbottom-zero tg-haslayout">
+				<div class="container">
+					<div class="tg-section-name">
+						<h2>Information</h2>
+					</div>
+					<div class="col-sm-11 col-xs-11 pull-right">
+						<div class="col-sm-8">
+							<div class="tg-contactinfobox">
+								{% for info in fields %}
+									<li>
+										<div class="tg-section-heading"><h2>{{info.title}}</h2></div>
+											<div class="tg-description">
+												<p>{{info.describe}}</p>
+											</div>
+										<div class="col-sm-offset-5">
+											<img src="{{info.image.url}}" alt="image not load" height="200" width="520" >
+										</div>
+									</li>
+								{% endfor %}
+								<div class=""> <a class="" href="#"><span>.</span></a> </div>	
+							</div>
+						</div>		
+					</div>
+				</div>					
+			</section>				
+		</main>
+		<!--************************************
+				Main End
+		************************************-->
+{% endblock %}

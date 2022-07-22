@@ -1,0 +1,71 @@
+{% extends 'sport_news/base.html' %}
+{% load static %}
+
+{% block content %}
+		<!--************************************
+				Banner Start
+		*************************************-->
+		<div class="tg-banner tg-haslayout">
+			<div class="tg-imglayer">
+				<img src="{% static 'mysite/images/bg-pattran.png' %}" alt="image desctription">
+			</div>
+			<div class="container">
+				<div class="row">
+					<div class="tg-banner-content tg-haslayout">
+						<div class="tg-pagetitle">
+							<h1>Transfer</h1>
+						</div>
+						<ol class="tg-breadcrumb">
+							<li><a href="#">Home</a></li>
+							<li class="active">Transfer</li>
+						</ol>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--************************************
+				Banner End
+		*************************************-->
+		<!--************************************
+				Main Start
+		*************************************-->
+		<main id="tg-main" class="tg-main tg-haslayout">
+			<div class="tg-main-section tg-haslayout">
+				<div class="container">
+					<div class="row">
+						<div class="tg-section-name">
+							<h2>Transfer</h2>
+						</div>
+						<div class="col-sm-11 col-xs-11 pull-right">
+					
+							<table style="width:80%">
+								<tr style="padding: 10px;">
+									<th style="width:180px">Player name</th>
+									<th style="width:130px">Nation</th>
+									<th>Age</th>
+									<th style="width:130px">Left</th>
+									<th style="width:130px">join</th>
+									<th>Fee</th>
+								</tr>
+
+								{% for info in tran %}
+									<tr style="padding: 10px;">
+										<td style="width:200px">{{info.name}}</td>
+										<td style="width:130px"><img src="{{info.nation.url}}" width="31" height="43" alt="nation"></td>
+										<td style="width:80px">{{info.age}}</td>
+										<td style="width:130px"><img src="{{info.left.url}}" width="31" height="43"  alt="nation"></td>
+										<td style="width:130px"><img src="{{info.join.url}}" width="31" height="43"  alt="nation"></td>
+										<td>{{info.fee}}</th>
+									</tr>
+								{% endfor %}
+							</table>
+
+						</div>
+					</div>	
+				</div>
+			</div>	
+		</main>
+		<!--************************************
+				Main End
+		*************************************-->
+{% endblock %}

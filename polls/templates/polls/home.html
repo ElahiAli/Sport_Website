@@ -1,0 +1,64 @@
+{% extends 'sport_news/base.html' %}
+{% load static %}
+
+{% block content %}
+		<!--************************************
+				Banner Start
+		*************************************-->
+		<div class="tg-banner tg-haslayout">
+			<div class="tg-imglayer">
+				<img src="{% static 'mysite/images/bg-pattran.png' %}" alt="image desctription">
+			</div>
+			<div class="container">
+				<div class="row">
+					<div class="tg-banner-content tg-haslayout">
+						<div class="tg-pagetitle">
+							<h1>Polls</h1>
+						</div>
+						<ol class="tg-breadcrumb">
+							<li><a href="#">Home</a></li>
+							<li class="active">Fan club - Polls</li>
+						</ol>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--************************************
+				Banner End
+		*************************************-->
+        <!--************************************
+				Main Start
+		*************************************-->
+        <main id="tg-main" class="tg-main tg-haslayout">
+			<section class="tg-main-section tg-haslayout">
+				<div class="container">
+					<div class="tg-section-name">
+						<h2>polls</h2>
+					</div>
+					<div class="col-sm-11 col-xs-11 pull-right">
+						<div class="row">
+                            {% if latest_question_list %}
+                                <ul>
+                                    {% for question in latest_question_list %}
+                                    <h3><a href="{% url 'polls:detail' question.id %}">{{ question.question_text }}</a></h3>
+                                    {% endfor %}
+                                </ul>
+                            {% else %}                   
+                                <p>No polls are availible.</p>
+                            {% endif %}
+
+                            {% load static %}
+
+                            <link rel="stylesheet" type="text/css" 
+                            href="{% static 'polls/style.css' %}">
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <!--************************************
+				Main End
+		*************************************-->
+
+{% endblock %}
+

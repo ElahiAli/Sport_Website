@@ -1,0 +1,67 @@
+{% extends 'sport_news/base.html' %}
+{% load static %}
+
+{% block content %}
+        <!--************************************
+				Banner Start
+		*************************************-->
+		<div class="tg-banner tg-haslayout">
+			<div class="tg-imglayer">
+				<img src="{% static 'mysite/images/bg-pattran.png' %}" alt="image desctription">
+			</div>
+			<div class="container">
+				<div class="row">
+					<div class="tg-banner-content tg-haslayout">
+						<div class="tg-pagetitle">
+							<h1>Polls-Detail</h1>
+						</div>
+						<ol class="tg-breadcrumb">
+							<li><a href="#">Home</a></li>
+							<li class="active">Fan club-Polls-Detail</li>
+						</ol>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--************************************
+				Banner End
+		*************************************-->
+        <!--************************************
+				Main Start
+		*************************************-->
+        <main id="tg-main" class="tg-main tg-haslayout">
+			<section class="tg-main-section tg-haslayout">
+				<div class="container">
+					<div class="tg-section-name">
+						<h2>polls-Detail</h2>
+					</div>
+					<div class="col-sm-11 col-xs-11 pull-right">
+						<div class="row">
+                            <h2>{{ question.question_text }}</h2>
+                            {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+                            <form action="{% url 'polls:vote' question.id %}"  method="POST">
+                                {% csrf_token %}
+                                <fieldset>
+                                    {% for choice in question.choice_set.all %}
+                                        <input type="radio"   name="choice"  id="choice{{ forloop.counte }}" 
+                                            value="{{ choice.id }}">
+                                        <lable  for="choice{{ forloop.counter }}">{{ choice.choice_text }}</lable><br>
+                                    {% endfor %}
+                                </fieldset>
+                                <input class="tg-btn " type="submit"  value="Vote"/>
+                            </form>
+                            <h3><a href="{% url 'polls:poll' %}">polls?</a></h3>
+                           
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <!--************************************
+				Main End
+		*************************************-->
+
+{% endblock %}

@@ -1,0 +1,152 @@
+{% extends 'sport_news/base.html' %}
+{% load static %}
+
+{% block content %}	
+	<!--************************************
+				Banner Start
+		*************************************-->
+		<div class="tg-banner tg-haslayout">
+			<div class="tg-imglayer">
+				<img src="{% static 'mysite/images/bg-pattran.png' %}" alt="image desctription">
+			</div>
+			<div class="container">
+				<div class="row">
+					<div class="tg-banner-content tg-haslayout">
+						<div class="tg-pagetitle">
+							<h1>match result</h1>
+						</div>
+						<ol class="tg-breadcrumb">
+							<li><a href="#">Home</a></li>
+							<li class="active">Match Result</li>
+						</ol>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--************************************
+				Banner End
+		*************************************-->
+		<!--************************************
+				Main Start
+		*************************************-->
+		<main id="tg-main" class="tg-main tg-haslayout">
+			<section class="tg-main-section tg-haslayout">
+				<div class="container">
+					<div class="tg-section-name">
+						<h2>match result</h2>
+					</div>
+					<div class="col-sm-11 col-xs-11 pull-right">
+						<div class="row">
+							<div class="tab-content tg-tabscontent">
+								<div role="tabpanel" class="tab-pane fade in active" id="one">
+									<div class="tg-matchresult">
+										<div class="tg-box">
+											<div class="tg-score"><h3>{{last_match.first_team_goals}}{{show.first_team_goals}} - {{last_match.second_team_goals}}{{show.second_team_goals}}</h3></div>
+											<div class="tg-teamscore">
+												<strong class="tg-team-logo">
+													<a href="#"><img src="{{last_match.first_team_image.url}}{{show.first_team_image.url}}" alt="image description" width="81" height="93"></a>
+												</strong>
+												<div class="tg-team-nameplusstatus">
+													<h4><a href="#">{{last_match.first_team_name}}{{show.first_team_name}} ( {{last_match.first_team_stat}}{{show.first_team_stat}} )</a></h4>
+												</div>
+												
+											</div>
+											<div class="tg-teamscore">
+												<strong class="tg-team-logo">
+													<a href="#">
+														<img src="{{last_match.second_team_image.url}}{{show.second_team_image.url}}" alt="image description" width="81" height="93"></a>
+												</strong>
+												<div class="tg-team-nameplusstatus">
+													<h4><a href="#">{{last_match.second_team_name}}{{show.second_team_name}} ( {{last_match.second_team_stat}}{{show.second_team_stat}} )</a></h4>
+												</div>
+												
+											</div>
+										</div>
+									</div>
+								</div>
+								
+							</div>
+							<ul class="tg-tickets tg-tabnav" role="tablist">
+								{% for info in last %}
+									<li role="presentation" class="active">
+										<a href="#one" aria-controls="one" role="tab" data-toggle="tab">
+											<div class="tg-ticket">
+												<time class="tg-matchdate" datetime="2016-05-03">{{info.day}}<span>{{info.month}}</span></time>
+												<div class="tg-matchdetail">
+													<span class="tg-theme-tag">{{info.league_type}}</span>
+													<h4>{{info.first_team_name}} <span>vs</span> {{info.second_team_name}}</h4>
+													<ul class="tg-matchmetadata">
+														<li><time datetime="2016-05-03">{{info.clock}}</time></li>
+														<li><address>{{info.address}}</address></li>
+													</ul>
+												</div>
+												<div class="tg-btnsbox">
+													<a class="tg-btn" href="{% url 'sport_news:fixture-detail' info.id %}">view result</a>
+												</div>
+											</div>
+										</a>
+									</li>
+								{% endfor %}
+							</ul>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!--************************************
+					Statistics Start
+			*************************************-->
+			<section class="tg-main-section tg-haslayout tg-bgdark">
+				<div class="container">
+					<div class="row">
+						<div class="col-sm-12 col-xs-12">
+							<div class="tg-statistics">
+								<div class="tg-statistic tg-goals">
+									<h3>Fixture</h3>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!--************************************
+					Statistics End
+			*************************************-->
+			<section class="tg-main-section tg-haslayout">
+				<div class="container">
+					<div class="tg-section-name">
+						<h2>Fixture</h2>
+					</div>
+					<div class="col-sm-11 col-xs-11 pull-right">
+						<div class="row">
+							<ul class="tg-tickets tg-tabnav" role="tablist">
+								{% for info in fix %}
+									<li role="presentation" class="active">
+										<a href="#one" aria-controls="one" role="tab" data-toggle="tab">
+											<div class="tg-ticket">
+												<time class="tg-matchdate" datetime="2016-05-03">{{info.day}}<span>{{info.month}}</span></time>
+												<div class="tg-matchdetail">
+													<span class="tg-theme-tag">{{info.league_type}}</span>
+													<h4>{{info.first_team_name}}<span>vs</span> {{info.second_team_name}}</h4>
+													<ul class="tg-matchmetadata">
+														<li><time datetime="2016-05-03">{{info.clock}}</time></li>
+														<li><address>{{info.address}}</address></li>
+													</ul>
+												</div>
+												<div class="tg-btnsbox">
+													<!-- <a class="tg-btn" href="#">read more</a> -->
+													<a class="tg-btn" href="{% url 'sport_news:ticket' info.id %}">more info</a>
+												</div>
+											</div>
+										</a>
+									</li>
+								{% endfor %}
+							</ul>
+						</div>
+					</div>
+				</div>
+			</section>
+		</main>
+		<!--************************************
+				Main End
+		*************************************-->
+{% endblock %}

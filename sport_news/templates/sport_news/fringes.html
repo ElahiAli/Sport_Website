@@ -1,0 +1,172 @@
+{% extends 'sport_news/base.html' %}
+{% load static %}
+
+
+{% block content %}
+		<!--************************************
+				Banner Start
+		*************************************-->
+		<div class="tg-banner tg-haslayout">
+			<div class="tg-imglayer">
+				<img src="{% static 'mysite/images/bg-pattran.png' %}" alt="image desctription">
+			</div>
+			<div class="container">
+				<div class="row">
+					<div class="tg-banner-content tg-haslayout">
+						<div class="tg-pagetitle">
+							<h1>Fringes</h1>
+						</div>
+						<ol class="tg-breadcrumb">
+							<li><a href="#">Home</a></li>
+							<li class="active">fringes</li>
+						</ol>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--************************************
+				Banner End
+		*************************************-->
+		<!--************************************
+				Main Start
+		*************************************-->
+		<main id="tg-main" class="tg-main tg-haslayout">
+			<div class="tg-main-section tg-haslayout">
+				<div class="container">
+					<div class="row">
+						<div class="tg-section-name">
+							<h2>Fringes</h2>
+						</div>
+						<div id="tg-twocolumns" class="tg-twocolumns tg-haslayout">
+							<div class="col-sm-11 col-xs-11 pull-right">
+								<div class="row">
+									<div class="col-md-9 col-sm-8 col-xs-12 pull-left">
+										<div class="tg-blogpost tg-blogpostgrid">
+											{% for info in frin %}
+												<div class="col-md-6 col-sm-12 col-xs-12">
+													<article class="tg-post">
+														<figure class="tg-postimg">
+															<a href="#">
+																<img src="{{info.image.url}}" alt="image description" height="200" width="370"> 
+															</a>
+															<figcaption>
+																<ul class="tg-postmetadata">
+																	<li><a href="#">by admin</a></li>
+																	<li><a href="#">04 comments</a></li>
+																	<li><a href="#">lifestyle</a></li>
+																</ul>
+															</figcaption>
+														</figure>
+														<div class="tg-posttitle"><h3><a href="#"></a>{{info.title}}</h3></div>
+														<div class="tg-description">
+															<p>{{info.explain|truncatewords:20}}</p>
+														</div>
+														<a class="tg-btn" href="{% url 'sport_news:blogdetail' info.id %}">Read more</a>
+													</article>
+												</div>
+											{% endfor %}
+										</div>	
+									</div>
+
+									<div class="col-md-3 col-sm-4 col-xs-12">
+										<aside id="tg-sidebar" class="tg-sidebar">
+											<div class="tg-widget tg-search">
+												<form class="form-search" action="{% url 'sport_news:search' %}" method="post" >
+													{% csrf_token %}
+													<fieldset>
+														<input type="search" placeholder="Search Here" name="q" class="form-control" >
+														<button type="submit"><i class="fa fa-search"></i></button>
+													</fieldset>
+												</form>
+											</div>   <!---->
+											
+											<div class="tg-widget tg-catagories-widget">
+												<h3>catagories</h3>
+												<ul>
+													<li>
+														<a href="https://www.amazon.com/Learning-Web-Design-Beginners-JavaScript/dp/1449319270"><em>Web Design</em></a>
+													</li>
+													<li>
+														<a href="https://www.coursera.org/browse/business/marketing"><em>Marketing</em></a>
+													</li>
+													<li>
+														<a href="https://www.freecodecamp.org/news/learn-backend-development/"><em>Backend</em></a>
+													</li>
+													<li>
+														<a href="https://www.coursera.org/specializations/graphic-design"><em>Graphic Design</em></a>
+													</li>
+													<li>
+														<a href="https://www.learnhowtobecome.org/photographer/"><em>Photography</em></a>
+													</li>
+													<li>
+														<a href="https://www.udemy.com/courses/business/e-commerce/"><em>eCommerce</em></a>
+													</li>
+													<li>
+														<a href="https://www.freecodecamp.org/news/html-css-11-hour-course/"><em>Html</em></a>
+													</li>
+												</ul>
+											</div>
+											<div class="tg-widget tg-mostcommented-widget">
+												<h3>Hot News</h3>
+												<ul>
+													{% for data in hot %}
+														<li>
+															<figure>
+																<a href="#">
+																	<img src="{{data.image.url}}" alt="image description">
+																</a>
+															</figure>
+															<div class="tg-posttitle">
+																<h3><a href="#">{{data.title}}</a></h3>
+																<!-- <span>500 Comments</span> -->
+															</div>
+														</li>
+													{% endfor %}
+												</ul>
+											</div>
+											<div class="tg-widget">
+												<h3>News picture</h3>
+												<div class="tg-slideshow-widget tg-haslayout">
+													<div id="tg-slideshow-slider" class="tg-slideshow-slider tg-haslayout">
+														<div class="swiper-wrapper">
+															{% for i in frin %}
+																<div class="swiper-slide">
+																	<figure class="tg-postimg">
+																		<img src="{{i.image.url}}" alt="image description">
+																	</figure>
+																</div>
+															{% endfor %}
+														</div>
+														<div class="swiper-pagination tg-pagination-slider"></div>
+														<div class="tg-themebtnnext"><span class="fa fa-angle-down"></span></div>
+														<div class="tg-themebtnprev"><span class="fa fa-angle-up"></span></div>
+													</div>
+												</div>
+											</div>
+											<div class="tg-widget tg-tags-widget">
+												<h3>popular tags</h3>
+												<ul>
+													<li><a class="tg-btn" href="#">fashion</a></li>
+													<li><a class="tg-btn" href="#">travel</a></li>
+													<li><a class="tg-btn" href="#">sports</a></li>
+													<li><a class="tg-btn" href="#">blog</a></li>
+													<li><a class="tg-btn" href="#">magazine</a></li>
+													<li><a class="tg-btn" href="#">fun time</a></li>
+													<li><a class="tg-btn" href="#">ui</a></li>
+													<li><a class="tg-btn" href="#">tech</a></li>
+													<li><a class="tg-btn" href="#">soccer</a></li>
+												</ul>
+											</div>
+										</aside>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>
+		<!--************************************
+				Main End
+		*************************************-->
+{% endblock %}

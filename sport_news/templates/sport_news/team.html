@@ -1,0 +1,231 @@
+{% extends 'sport_news/base.html' %}
+{% load static %}
+
+{% block content %}
+		<!--************************************
+				Banner Start
+		*************************************-->
+		<div class="tg-banner tg-haslayout">
+			<div class="tg-imglayer">
+				<img src="{% static 'mysite/images/bg-pattran.png' %}" alt="image desctription">
+			</div>
+			<div class="container">
+				<div class="row">
+					<div class="tg-banner-content tg-haslayout">
+						<div class="tg-pagetitle">
+							<h1>Team</h1>
+						</div>
+						<ol class="tg-breadcrumb">
+							<li><a href="#">Home</a></li>
+							<li class="active">Team</li>
+						</ol>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--************************************
+				Banner End
+		*************************************-->
+		<!--************************************
+				Main Start
+		*************************************-->
+		<main id="tg-main" class="tg-main tg-haslayout">
+			<!--************************************
+					men Player Start
+			*************************************-->
+			<section class="tg-main-section tg-haslayout">
+				<div class="container">
+					<div class="tg-section-name">
+						<h2>men Player</h2>
+					</div>
+					<div class="col-sm-11 col-xs-11 pull-right">
+						<div class="row">
+							<div class="tg-topratedplayer tg-haslayout">
+								<div class="row">
+									<div class="col-md-7 col-sm-12 col-xs-12">
+										<div id="tg-playerscrollbar" class="tg-players tg-playerscrollbar">
+											{% for data in men %}
+												<div class="tg-player">
+													<div class="col-sm-6 col-xs-6 pull-right">
+														<div class="tg-playcontent">
+															<a class="tg-theme-tag" href="#">{{data.post}}</a>
+															<h3><a href="#">{{data.full_name}}</a></h3>
+															<div class="tg-description">
+																<p>{{data.description}}</p>
+															</div>
+															<ul class="tg-socialicons">
+																<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+																<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+																<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+																<li><a href="#"><i class="fa fa-dribbble"	></i></a></li>
+															</ul>
+														</div>
+													</div>
+													<div class="col-sm-6 col-xs-6">
+														<figure>
+															<a href="#">
+																<img src="{{data.image.url}}" alt="{{data.full_name}}">
+															</a>
+														</figure>
+													</div>
+												</div>
+											{% endfor %}
+										</div>
+									</div>
+									<div class="col-md-5 col-sm-12 col-xs-12">
+										<div class="tg-contentbox">
+											<div class="tg-section-heading"><h2>Borussia Dortmund</h2></div>
+											<div class="tg-description">
+												<p>Ballspielverein Borussia 09 e. V. Dortmund, commonly known as Borussia Dortmund, BVB, or simply Dortmund,
+													 is a German professional sports club based in Dortmund, North Rhine-Westphalia.
+													<a href="https://en.wikipedia.org/wiki/Borussia_Dortmund">Wikipedia</a>
+												</p>
+											</div>
+											<div class="tg-btnbox">
+												<a class="tg-btn" href="{% url 'sport_news:about_us' %}"><span>about us</span></a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!--************************************
+					men Player End
+			*************************************-->
+			<!--************************************
+					Ladies
+			*************************************-->
+			<section class="tg-main-section tg-haslayout">
+				<div class="container">
+					<div class="tg-section-name">
+						<h2>handball-ladies</h2>
+					</div>
+					<div class="col-sm-11 col-xs-11 pull-right">
+						<div class="row">
+							<div class="tg-topratedplayer tg-haslayout">
+								<div class="row">
+									<div class="col-md-7 col-sm-12 col-xs-12">
+										<div id="tg-playerscrollbar" class="tg-players tg-playerscrollbar">
+											{% for data in ladies %}
+											<div class="tg-player">
+												<div class="col-sm-6 col-xs-6 pull-right">
+													<div class="tg-playcontent">
+														<a class="tg-theme-tag" href="#">{{data.post}}</a>
+														<h3><a href="#">{{data.full_name}}</a></h3>
+														<!-- <span class="tg-stars"><span></span></span> -->
+														<div class="tg-description">
+															<p>{{data.description}}</p>
+														</div>
+														<ul class="tg-socialicons">
+															<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+															<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+															<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+															<li><a href="#"><i class="fa fa-dribbble"	></i></a></li>
+														</ul>
+													</div>
+												</div>
+												<div class="col-sm-6 col-xs-6">
+													<figure>
+														<a href="#">
+															<img src="{{data.image.url}}" alt="{{data.full_name}}">
+														</a>
+													</figure>
+												</div>
+											</div>
+											{% endfor %}
+										</div>
+									</div>
+									<div class="col-md-5 col-sm-12 col-xs-12">
+										<div class="tg-contentbox">
+											<div class="tg-section-heading"><h2>handball team</h2></div>
+											<div class="tg-description">
+												<p>Borussia Dortmund is a German women's handball team from Dortmund. They compete in the 
+													Handball-Bundesliga Frauen since 2015-2016 season, the top division in Germany. They won the Handball-Bundesliga Frauen in 2021 and are currently competing in the 2021–22 Women's EHF Champions League..
+													<a href="https://en.wikipedia.org/wiki/Borussia_Dortmund">Wikipedia</a>
+												</p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!--************************************
+					Ladies End
+			*************************************-->
+			<!--************************************
+					Academy Start
+			*************************************-->
+			<section class="tg-main-section tg-haslayout">
+				<div class="container">
+					<div class="tg-section-name">
+						<h2>academy</h2>
+					</div>
+					<div class="col-sm-11 col-xs-11 pull-right">
+						<div class="row">
+							<div class="tg-topratedplayer tg-haslayout">
+								<div class="row">
+									<div class="col-md-7 col-sm-12 col-xs-12">
+										<div id="tg-playerscrollbar" class="tg-players tg-playerscrollbar">
+											{% for data in academy %}
+											<div class="tg-player">
+												<div class="col-sm-6 col-xs-6 pull-right">
+													<div class="tg-playcontent">
+														<a class="tg-theme-tag" href="#">{{data.post}}</a>
+														<h3><a href="#">{{data.full_name}}</a></h3>
+														<!-- <span class="tg-stars"><span></span></span> -->
+														<div class="tg-description">
+															<p>{{data.description}}</p>
+														</div>
+														<ul class="tg-socialicons">
+															<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+															<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+															<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+															<li><a href="#"><i class="fa fa-dribbble"	></i></a></li>
+														</ul>
+													</div>
+												</div>
+												<div class="col-sm-6 col-xs-6">
+													<figure>
+														<a href="#">
+															<img src="{{data.image.url}}" width="245" height="416" alt="{{data.full_name}}">
+														</a>
+													</figure>
+												</div>
+											</div>
+											{% endfor %}
+										</div>
+									</div>
+									<div class="col-md-5 col-sm-12 col-xs-12">
+										<div class="tg-contentbox">
+											<div class="tg-section-heading"><h2>Borussia Dortmund Youth Sector</h2></div>
+											<div class="tg-description">
+												<p>Borussia Dortmund Youth Sector is the youth set-up of Borussia Dortmund. The club operates the 
+													system for boys from the age of nine upwards and a total of 15 youth teams. Home games are staged at the club's training ground Hohenbuschei.
+													<a href="https://en.wikipedia.org/wiki/Borussia_Dortmund_Youth_Sector">Wikipedia</a>
+												</p>
+											</div>
+											<div class="tg-btnbox">
+												<a class="tg-btn" href="{% url 'sport_news:academy' %}"><span>about us</span></a>
+											</div>
+										</div>	
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!--************************************
+					Academy End
+			*************************************-->
+		</main>
+		<!--************************************
+				Main End
+		*************************************-->
+{% endblock %}

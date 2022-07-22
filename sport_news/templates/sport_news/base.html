@@ -1,0 +1,452 @@
+{% load static %}
+
+<!doctype html>
+<!--[if lt IE 7]>		<html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="zxx"> <![endif]-->
+<!--[if IE 7]>			<html class="no-js lt-ie9 lt-ie8" lang="zxx"> <![endif]-->
+<!--[if IE 8]>			<html class="no-js lt-ie9" lang="zxx"> <![endif]-->
+<!--[if gt IE 8]><!-->	<html class="no-js" lang="zxx"> <!--<![endif]-->
+
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>BvB_news</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="apple-touch-icon" href="apple-touch-icon.png">
+	<link rel="stylesheet" href="{% static 'mysite/css/bootstrap.min.css' %}">
+	<link rel="stylesheet" href="{% static 'mysite/css/normalize.css' %}">
+	<link rel="stylesheet" href="{% static 'mysite/css/font-awesome.min.cs' %}s">
+	<link rel="stylesheet" href="{% static 'mysite/css/transitions.css' %}">
+	<link rel="stylesheet" href="{% static 'mysite/css/prettyPhoto.css' %}">
+	<link rel="stylesheet" href="{% static 'mysite/css/swiper.min.css' %}">
+	<link rel="stylesheet" href="{% static 'mysite/css/jquery-ui.css' %}">
+	<link rel="stylesheet" href="{% static 'mysite/css/animate.css' %}">
+	<link rel="stylesheet" href="{% static 'mysite/css/owl.theme.css' %}">
+	<link rel="stylesheet" href="{% static 'mysite/css/owl.carousel.css' %}">
+	<link rel="stylesheet" href="{% static 'mysite/css/customScrollbar.css' %}">
+	<link rel="stylesheet" href="{% static 'mysite/css/icomoon.css' %}">
+	<link rel="stylesheet" href="{% static 'mysite/css/main.css'%}">
+	<link rel="stylesheet" href="{% static 'mysite/css/color.css'%}">
+	<link rel="stylesheet" href="{% static 'mysite/css/responsive.css' %}">
+	<link rel="shortcut icon" href="{% static 'mysite/favicon/dortmund.png' %}"/>
+	<script src="{% static 'mysite/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js' %}"></script>
+</head>
+<body>
+	<!--[if lt IE 8]>
+		<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+	<![endif]-->
+	<!--************************************
+			Wrapper Start
+	*************************************-->
+	<div id="tg-wrapper" class="tg-wrapper tg-haslayout">
+		<!--************************************
+				Mobile Menu Start
+		*************************************-->
+		<!-- <div id="tg-navigationm-mobile" class="tg-navigationm-mobile tg-navigation collapse navbar-collapse">
+			<span id="tg-close" class="tg-close fa fa-close"></span>
+			<div class="tg-colhalf">
+				<ul>
+					<li class="active menu-item-has-children">
+						<a href="#">Main</a>
+						<ul class="tg-dropdown-menu">
+							<li class="active"><a href="sport_news/index-2.html">home1</a></li>
+							<li><a href="sport_news/index2.html">home2</a></li>
+						</ul>
+					</li>
+					<li class="menu-item-has-children">
+						<a href="#">team</a>
+						<ul class="tg-dropdown-menu">
+							<li><a href="playergrid-v1.html">playergrid-v1</a></li>
+							<li><a href="playergrid-v2.html">playergrid-v2</a></li>
+							<li><a href="playerdetail.html">playergrid detail</a></li>
+						</ul>
+					</li>
+					<li><a href="buyticket.html">Buy Tickets</a></li>
+					<li class="menu-item-has-children">
+						<a href="#">Match Results</a>
+						<ul class="tg-dropdown-menu">
+							<li><a href="matchresult.html">match result</a></li>
+							<li><a href="matchresultdetail.html">match result detail</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+			<div class="tg-colhalf">
+				<ul>
+					<li class="menu-item-has-children">
+						<a href="#">fixtures</a>
+						<ul class="tg-dropdown-menu">
+							<li><a href="fixtures.html">fixtures</a></li>
+							<li><a href="fixturedetail.html">fixture detail</a></li>
+						</ul>
+					</li>
+					<li class="menu-item-has-children">
+						<a href="#">pro soccer media</a>
+						<ul class="tg-dropdown-menu">
+							<li><a href="soccermedia-1.html">pro soccer media1</a></li>
+							<li><a href="soccermedia-2.html">pro soccer media2</a></li>
+						</ul>
+					</li>
+					<li><a href="contactus.html">Contact</a></li>
+					<li class="menu-item-has-children">
+						<a href="#"><i class=" fa fa-navicon"></i></a>
+						<ul>
+							<li><a href="aboutus.html">about us</a></li>
+							<li><a href="shoplist.html">shop list</a></li>
+							<li><a href="shopgrid.html">shop grid</a></li>
+							<li><a href="productsingle.html">shop detail</a></li>
+							<li><a href="bloglist.html">blog list</a></li>
+							<li><a href="bloggrid.html">blog grid</a></li>
+							<li><a href="blogdetail.html">blog detail</a></li>
+							<li><a href="404.html">404 error</a></li>
+							<li><a href="comming-soon.html">comming soon</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div> -->
+		<!--************************************
+				Mobile Menu End
+		*************************************-->
+		<!--************************************
+				Header Start
+		*************************************-->
+		<header id="tg-header" class="tg-header tg-haslayout">
+			<div class="container">
+				<div class="col-md-10 col-md-offset-1 col-sm-12 col-xs-12">
+					<div class="row">
+						
+						<div class="tg-topbar tg-haslayout">
+							<nav id="tg-topaddnav" class="tg-topaddnav">
+								<div class="navbar-header">
+									<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#tg-addnavigationm-mobile">
+										<i class="fa fa-arrow-right"></i>
+									</button>
+								</div>
+								<div id="tg-addnavigationm-mobile" class="tg-addnavigationm-mobile collapse navbar-collapse">
+									<div class="tg-colhalf pull-right">
+										<nav class="tg-addnav">
+											<ul>
+												{% if user.is_authenticated %}
+													<li><a>Hello, {{ user.username | default:'Guest' }}.</a></li>
+                     								<li><a href="{% url 'users:logout' %}">logout</a></li>
+												{% else %}
+													<li><a href="{% url 'users:register' %}">register</a></li>
+													<li><a href="{% url 'users:login' %}">login</a></li>
+												{% endif %}												
+												<li>
+													<div class="tg-cart">
+														<a href="{% url 'sport_news:cart' %}" class="fa fa-shopping-cart"></a>
+														</a>		
+												</li>
+												<li>
+													<a id="tg-btn-search" href="javascript:void(0)"><i class="fa fa-search"></i></a>
+												</li>
+											</ul>
+										</nav>
+									</div>
+									<div class="tg-colhalf">
+										<ul class="tg-socialicons">
+											<li><a style="color :whitesmoke;">Total views : {{count}}</a></li>
+											<li>
+												<a href="https://www.facebook.com/BVB/">
+													<i class="fa fa-facebook"></i>
+												</a>
+											</li>
+											<li>
+												<a href="https://twitter.com/BlackYellow?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor">
+													<i class="fa fa-twitter"></i>
+												</a>
+											</li>
+											<li>
+												<a href="https://de.linkedin.com/company/borussia-dortmund">
+													<i class="fa fa-linkedin"></i>
+												</a>
+											</li>
+											<li>
+												<a href="https://www.google.com/search?q=borussia+dortmund+google%2B&sxsrf=ALiCzs 
+												bIByeculREFGCS0Q0dJJfAJtek5Q%3A1652160642331&ei=gvh5Yo_zE7aK9u8PmI-jwAs&ved=0ahUKEwiPvMqBmt
+												T3AhU2hf0HHZjHCLgQ4dUDCA4&uact=5&oq=borussia+dortmund+google%2B&gs_lcp=Cgdnd3Mtd2l6EAMyBggAEBYQHjIGCA
+												AQFhAeOgcIIxCwAxAnOgcIABBHELADOgQIIxAnOgUIABCABEoECEEYAEoECEYYAFC-F1iTImCCJWgDcAF4AIABjwOIAZ0MkgEHMC4xLjM
+												uMpgBAKABAcgBCcABAQ&sclient=gws-wiz">
+													<i class="fa fa-google-plus"></i>
+												</a>
+											</li>
+											<li>
+												<a href="https://dribbble.com/tags/borussia">
+													<i class="fa fa-dribbble"></i>
+												</a>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</nav>
+						</div>
+						<nav id="tg-nav" class="tg-nav brand-center">
+							<div class="navbar-header">
+								<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#tg-navigationm-mobile">
+									<i class="fa fa-bars"></i>
+								</button>
+								<strong class="tg-logo">
+									<a href="{% url 'sport_news:index' %}"><img src="{% static 'mysite/images/444.png' %}" alt="image description"></a>
+								</strong>
+							</div>
+							<div id="tg-navigation" class="tg-navigation">
+								<div class="tg-colhalf">
+                                    <ul>
+                                        <li class="active">
+                                            <a href="{% url 'sport_news:index' %}">Home</a>
+                                        </li>
+                                        <li>
+                                            <a href="{% url 'sport_news:team' %}">Team</a>
+                                        </li>
+                                        <li>
+											<a>News</a>
+											<ul class="tg-dropdown-menu">
+												<li><a href="{% url 'sport_news:blog' %}">All news</a></li>
+												<li><a href="{% url 'sport_news:video' %}">Video</a></li>
+												<li><a href="{% url 'sport_news:gallery' %}">Gallery</a></li>
+												<li><a href="{% url 'sport_news:podcast' %}">podcast</a></li>
+												<li><a href="{% url 'sport_news:fixture' %}">Fixture & Results</a></li>
+												<li><a href="{% url 'sport_news:transfer' %}">Transfer market</a></li>
+												<li><a href="{% url 'sport_news:last-season' %}">News of past seasons</a></li>
+												<li><a href="{% url 'sport_news:fringes' %}">fringes</a></li>
+												<li><a href="{% url 'sport_news:table' %}">League table</a></li>
+											</ul>
+										</li>
+                                        <li>
+                                            <a>Education</a>
+                                            <ul class="tg-dropdown-menu">
+                                                <li><a href="{% url 'sport_news:martial' %}">martial</a></li>
+                                                <li><a href="{% url 'sport_news:bodybuilding' %}">Bodybuilding</a></li>
+												<li><a href="{% url 'sport_news:group' %}">Group</a></li>
+												<li><a href="{% url 'sport_news:water_hall' %}">water hall</a></li>
+												<li><a href="{% url 'sport_news:wrestling' %}">Wrestling hall</a></li>
+												<li><a href="{% url 'sport_news:salon' %}">Salon</a></li>
+												<li><a href="{% url 'sport_news:counseling' %}">Nutrition counseling</a></li>
+										
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="tg-colhalf">
+                                    <ul>
+                                        <li>
+                                            <a href="{% url 'sport_news:shop' %}">Shop</a>
+                                            <ul class="tg-dropdown-menu">
+												<li><a href="{% url 'sport_news:club_kit' %}">Club Kit</a></li>
+												<li><a href="{% url 'sport_news:accessories' %}">accessories</a></li>
+												<li><a href="{% url 'sport_news:Sports-set' %}">Sports set</a></li>
+											
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a> Knowledge</a>
+                                            <ul class="tg-dropdown-menu">
+                                                <li><a href="{% url 'sport_news:nutrition' %}">Nutrition</a></li>
+												<li><a href="https://caloriecontrol.org/healthy-weight-tool-kit/food-calorie-calculator/?">nutritional value</a></li>
+												<li><a href="{% url 'sport_news:question' %}">Frequently Questions</a></li>
+												<li><a href="{% url 'sport_news:fields' %}">Introducing sports and bodybuilding fields</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="{% url 'sport_news:contact' %}">Contact</a></li>
+                                        <li>
+                                            <a href="#"><i class=" fa fa-navicon"></i></a>
+                                            <ul>
+												
+												<li><a href="{% url 'polls:poll' %}">polls</a></li>
+                                                <li>
+													<a>Archive</a>
+													<ul>
+														<li><a href="{% url 'sport_news:archive-gallery' %}">Gallery</a></li>
+														<li><a href="{% url 'sport_news:archive-video' %}">Video</a></li>
+													</ul>
+												</li>
+                                               
+												<li><a href="{% url 'sport_news:about_us' %}">About us</a>
+													<ul>
+														<li><a href="{% url 'sport_news:club' %}">Club</a></li>
+														<li><a href="{% url 'sport_news:academy' %}">Academy</a></li>
+													</ul>
+												</li>
+												<li><a href="http://127.0.0.1:8000/admin/">َAdmin</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+							</div>
+						</nav>
+					</div>
+				</div>
+			</div>
+		</header>
+		<!--************************************
+				Header End
+		*************************************--> 
+
+
+        
+        {% block content %}
+        
+        {% endblock %}
+        <!--************************************
+				Footer Start
+		*************************************-->
+		<footer id="tg-footer" class="tg-footer tg-haslayout">
+			<div class="tg-haslayout tg-footerinfobox">
+				<div class="tg-bgboxone"></div>
+				<div class="tg-bgboxtwo"></div>
+				<div class="tg-footerinfo">
+					<div class="container">
+						<div class="row">
+							<div class="col-sm-4">
+								<div class="tg-footercol">
+									<div class="tg-posttitle">
+										<h3>Did you know?</h3>
+									</div>
+									<div class="tg-description">
+										<p>Dortmund was founded in 1909, by a group of eighteen youths unhappy with the local chaplain's 
+											treatment of their church-sponsored football team. Being a relatively small club, Dortmund's
+											 ambitions were moderate to start with.</p>
+									</div>
+									<form class="tg-form-newsletter">
+										<fieldset>
+											<a class="tg-btn" href="{% url 'sport_news:club' %}">Read more</a>
+										</fieldset>
+									</form>
+									<div class="tg-posttitle">
+										<h3>Links</h3>
+									</div>
+									<div class="tg-tags">
+										<a class="tg-tag" href="https://www.bvb.de/eng">Official site</a>
+										<a class="tg-tag" href="https://www.bundesliga.com/en/bundesliga">League site</a>
+										<a class="tg-tag" href="https://www.fifa.com/">FIFA</a>
+										<a class="tg-tag" href="https://www.the-afc.com/en/">AFC</a>
+										<a class="tg-tag" href="https://www.bundesliga.com/en/bundesliga">bundesliga</a>
+										<a class="tg-tag" href="https://www.laliga.com/en-GB">laliga</a>
+										<a class="tg-tag" href="https://www.skysports.com/championship-table">skysports-championship</a>
+									</div>
+								</div>
+							</div>
+							<div class="col-sm-4">
+								<div class="tg-footercol">
+									<div class="tg-posttitle">
+										<h3>Latest products</h3>
+									</div>
+									<div class="tg-toprated">
+										<ul>
+											{% for info in product %}
+												<li>
+													<figure>
+														<a href="{% url 'sport_news:shop-list' info.id %}">
+															<img src="{{info.image.url}}" width="63" height="71" alt="image description">
+														</a>
+													</figure>
+													<div class="tg-productcontent">
+														<h4><a href="{% url 'sport_news:shop-list' info.id %}">{{info.title}}</a></h4><span class="tg-stars"><span></span></span>
+														<span class="tg-price">Price: ${{info.price}}</span>
+													</div>
+												</li>
+											{% endfor %}
+										</ul>
+									</div>
+								</div>
+							</div>
+							<div class="col-sm-4">
+								<div class="tg-footercol">
+									<div class="tg-haslayout">
+										<strong class="tg-logo">
+											<a href="#">
+												<img src="{% static 'mysite/images/3.png' %}" alt="image description" height="10" width="10">
+											</a>
+										</strong>
+									</div>
+									<div class="tg-description">
+										<p>The North Rhine-Westphalian giants have the highest average attendance of any football club worldwide (81,178)</p>
+									</div>
+									<ul class="tg-contactinfo">
+										<li>
+											<i class="fa fa-home"></i>
+											<address>Dortmund,Germany</address>
+										</li>
+										<li>
+											<i class="fa fa-envelope-o"></i>
+											<a href="info%40domain.html">service@bvb.de (general)</a>
+										</li>
+										<li>
+											<i class="fa fa-phone"></i>
+											<span>+49 231 90200 (general)</span>
+										</li>
+									</ul>
+									<div class="tg-haslayout">
+										<a class="tg-btn" href="{% url 'sport_news:contact' %}">contact us</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="tg-footerbar">
+				<div class="container">
+					<nav class="tg-footernav">
+						<ul>
+							<li><a href="{% url 'sport_news:index' %}">Home</a></li>
+							<li><a href="{% url 'sport_news:team' %}">Team</a></li>
+							<li><a href="{% url 'sport_news:fixture' %}">Match Results</a></li>
+							<li><a href="{% url 'sport_news:shop' %}">Shop</a></li>
+							<li><a href="{% url 'sport_news:contact' %}">Contact</a></li>
+						</ul>
+					</nav>
+				</div>
+			</div>
+		</footer>
+		<!--************************************
+				Footer End
+		*************************************-->
+	</div>
+	<!--************************************
+			Wrapper End
+	*************************************-->
+	<!--************************************
+			Search Start
+	*************************************-->
+	<div class="tg-searchbox">
+		<a id="tg-close-search" class="tg-close-search" href="javascript:void(0)"><span class="fa fa-close"></span></a>
+		<div class="tg-searcharea">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-6 col-sm-offset-3">
+						<form class="tg-form-search" method="post" action="{% url 'sport_news:search' %}">
+							{% csrf_token %}
+							<fieldset>
+								<input type="search" class="form-control" placeholder="keyword" name="q">
+								<i class="icon-icon_search2"></i>
+							</fieldset>
+						</form>
+						<p>Search For News and Products</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div> 
+	<!--************************************
+			Search End
+	*************************************-->
+	
+	<script src="{% static 'mysite/js/vendor/jquery-library.js' %}"></script>
+	<script src="{% static 'mysite/js/vendor/bootstrap.min.js' %}"></script>
+	<script src="{% static 'mysite/js/customScrollbar.min.js' %}"></script>
+	<script src="{% static 'mysite/js/owl.carousel.js' %}"></script>
+	<script src="{% static 'mysite/js/isotope.pkgd.js' %}"></script>
+	<script src="{% static 'mysite/js/prettyPhoto.js' %}"></script>
+	<script src="{% static 'mysite/js/swiper.min.js' %}"></script>
+	<script src="{% static 'mysite/js/jquery-ui.js' %}"></script>
+	<script src="{% static 'mysite/js/countTo.js' %}"></script>
+	<script src="{% static 'mysite/js/appear.js' %}"></script>
+	<script src="{% static 'mysite/js/main.js' %}"></script>
+</body>
+
+
+</html>

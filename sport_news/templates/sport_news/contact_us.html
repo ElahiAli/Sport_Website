@@ -1,0 +1,169 @@
+{% extends 'sport_news/base.html' %}
+{% load static %}
+
+
+{% block content %}
+		<!--************************************
+				Banner Start
+		*************************************-->
+		<div class="tg-banner tg-haslayout">
+			<div class="tg-imglayer">
+				<img src="{% static 'mysite/images/bg-pattran.png' %}" alt="image desctription">
+			</div>
+			<div class="container">
+				<div class="row">
+					<div class="tg-banner-content tg-haslayout">
+						<div class="tg-pagetitle">
+								<h1>contact</h1>
+						</div>
+						<ol class="tg-breadcrumb">
+							<li><a href="#">Home</a></li>
+							<li class="active">contact</li>
+						</ol>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--************************************
+				Banner End
+		*************************************-->
+		<!--************************************
+				Main Start
+		*************************************-->
+		<main id="tg-main" class="tg-main tg-paddingbottom-zero tg-haslayout">
+			<section class="tg-main-section tg-paddingbottom-zero tg-haslayout">
+				<div class="container">
+					<div class="tg-section-name">
+						<h2>contact</h2>
+					</div>
+					<div class="col-sm-11 col-xs-11 pull-right">
+						<div class="row">
+							<div class="tg-contactus tg-haslayout">
+								<div class="row">
+									<div class="col-md-5 col-sm-12 col-xs-12">
+										<div class="tg-contactinfobox">
+											<div class="tg-section-heading"><h2>feel free to send us your queries, Suggestion &amp; Remarks &amp; also Nutrition counseling</h2></div>
+											<div class="tg-description">
+												<p>The general enquiries telephone number for the City of Dortmund is +49 231 50-0, available Monday to Friday 7am to 8pm; Saturday 9.30am to 12.30pm.</p>
+											</div>
+											<ul class="tg-contactinfo">
+												<li>
+													<i class="fa fa-map-marker"></i>
+													<address>Strobelallee Training Centre</address>
+												</li>
+												<li>
+													<i class="fa fa-phone"></i>
+													<span>+49 231 50-0</span>
+												</li>
+												<li>
+													<i class="fa fa-envelope-o"></i>
+													<a href="#">redaktion@dortmund.de</a>
+												</li>
+												<li>
+													<i class="fa fa-skype"></i>
+													<a href="#">skype</a>
+												</li>
+												<li>
+													<i class="fa fa-facebook-f"></i>
+													<a href="https://www.facebook.com/BVB/">facebook.com</a>
+												</li>
+												<li>
+													<i class="fa fa-twitter"></i>
+													<a href="https://twitter.com/BlackYellow?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor">twitter.com</a>
+												</li>
+												<li>
+													<i class="fa fa-laptop"></i>
+													<a href="{% url 'sport_news:index' %}">www.BvB_news.com</a>
+												</li>
+											</ul>
+										</div>
+									</div>
+									<div class="col-md-7 col-sm-12 col-xs-12">
+										<form action="{% url 'sport_news:contact' %}" method="post" class="tg-commentform help-form" id="tg-commentform">
+											{% csrf_token %}
+											{{ form.as_p }}
+											<fieldset>
+												<div class="form-group"> 
+													<button type="submit" class="tg-btn">send</button>
+												</div>
+											</fieldset><!--class="tg-btn submit-now"-->
+										</form>
+									</div>
+									<div id="tg-officeaddressslider" class="tg-officeaddressslider tg-officeaddressnav owl-carousel">
+										<div class="item">
+											<span class="tg-theme-tag">Stadium</span>
+											<div class="tg-section-heading"><h2>Dortmund, DE</h2></div>
+											<ul class="tg-contactinfo">
+												<li>
+													<i class="fa fa-map-marker"></i>
+													<address>Strobelallee 50, 44139 Dortmund, Germany</address>
+												</li>
+												<li>
+													<i class="fa fa-phone"></i>
+													<span>+49 231 50-0</span>
+												</li>
+												<li>
+													<i class="fa fa-envelope-o"></i>
+													<span>redaktion@dortmund.de</span>
+												</li>
+											</ul>
+										</div>
+										<div class="item">
+											<span class="tg-theme-tag">Training Centre</span>
+											<div class="tg-section-heading"><h2>Dortmund, DE</h2></div>
+											<ul class="tg-contactinfo">
+												<li>
+													<i class="fa fa-map-marker"></i>
+													<address>Strobelallee 50, 44139 Dortmund, Germany</address>
+												</li>
+												<li>
+													<i class="fa fa-phone"></i>
+													<span>+49 231 50-0</span>
+												</li>
+												<li>
+													<i class="fa fa-envelope-o"></i>
+													<span>redaktion@dortmund.de</span>
+												</li>
+											</ul>
+										</div>
+										<div class="item">
+											<span class="tg-theme-tag">Club</span>
+											<div class="tg-section-heading"><h2>Dortmund, DE</h2></div>
+											<ul class="tg-contactinfo">
+												<li>
+													<i class="fa fa-map-marker"></i>
+													<address>Strobelallee 50, 44139 Dortmund, Germany</address>
+												</li>
+												<li>
+													<i class="fa fa-phone"></i>
+													<span>+49 231 50-0</span>
+												</li>
+												<li>
+													<i class="fa fa-envelope-o"></i>
+													<span>redaktion@dortmund.de</span>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div id="tg-mapcontent" class="tg-mapcontent owl-carousel">
+					<div class="item">
+						<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2482.8070273775697!2d-0.13298118405677026!3d51.516756217839884!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48761b2d06098567%3A0x657781e4c62dccae!2s14+Tottenham+Court+Rd%2C+Fitzrovia%2C+London+W1T+1JY%2C+UK!5e0!3m2!1sen!2s!4v1468332667385"></iframe>
+					</div>
+					<div class="item">
+						<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2490.0010946428147!2d-2.3645922841588!3d51.384657927491055!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487181149eed3bff%3A0x3aaf87fd82220875!2s3+Edgar+Buildings+George+St%2C+Bath%2C+Bath+and+North+East+Somerset+BA1+2FJ%2C+UK!5e0!3m2!1sen!2s!4v1468332753250"></iframe>
+					</div>
+					<div class="item">
+						<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2234.9551750898822!2d-3.212455184020526!3d55.93281498556128!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4887c70c0bdf6d55%3A0x4129ca60bdbbdb2d!2s46+Morningside+Rd%2C+Edinburgh+EH10+4BF%2C+UK!5e0!3m2!1sen!2s!4v1468332796662"></iframe>
+					</div>
+				</div>
+			</section>
+		</main>
+		<!--************************************
+				Main End
+		*************************************-->
+{% endblock %}

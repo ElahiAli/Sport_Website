@@ -1,0 +1,91 @@
+{% extends 'sport_news/base.html' %}
+{% load static %}
+
+{% block content %}
+		<!--************************************
+				Banner Start
+		*************************************-->
+		<div class="tg-banner tg-haslayout">
+			<div class="tg-imglayer">
+				<img src="{% static 'mysite/images/bg-pattran.png' %}" alt="image desctription">
+			</div>
+			<div class="container">
+				<div class="row">
+					<div class="tg-banner-content tg-haslayout">
+						<div class="tg-pagetitle">
+							<h1>BUNDESLIGA</h1>
+						</div>
+						<ol class="tg-breadcrumb">
+							<li><a href="#">Home</a></li>
+							<li class="active">league table</li>
+						</ol>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--************************************
+				Banner End
+		*************************************-->
+		<!--************************************
+				Main Start
+		*************************************-->
+		<main id="tg-main" class="tg-main tg-haslayout">
+			<div class="tg-main-section tg-haslayout">
+				<div class="container">
+					<div class="row">
+						<div class="tg-section-name">
+							<h2>league table</h2>
+						</div> 
+						<div class="col-sm-11 col-xs-11 pull-right">
+							
+							
+							<table class="standing-table__table callfn" data-fn="table-sorter-lite" data-lite="true">
+
+								<caption class="standing-table__caption">
+								  German Bundesliga   </caption>		  
+								<thead>
+								  <tr class="standing-table__row">
+									<th class="standing-table__cell standing-table__header-cell" title="Position" data-label="pos" data-index="0">#</th>
+									<th class="standing-table__cell standing-table__header-cell standing-table__cell--name" title="Team" data-index="1">Team</th>
+									<th class="standing-table__cell standing-table__header-cell" title="Played" data-label="pld" data-index="2">Pl</th>
+									<th class="standing-table__cell standing-table__header-cell is-hidden--bp35" title="Won" data-label="w" data-index="3">W</th>
+									<th class="standing-table__cell standing-table__header-cell is-hidden--bp35" data-label="d" data-index="4">D</th>
+									<th class="standing-table__cell standing-table__header-cell is-hidden--bp35" data-label="l" data-index="5">L</th>
+									<th class="standing-table__cell standing-table__header-cell is-hidden--bp35" data-label="f" data-index="6">F</th>
+									<th class="standing-table__cell standing-table__header-cell is-hidden--bp35" data-label="a" data-index="7">A</th>
+									<th class="standing-table__cell standing-table__header-cell" data-label="gd" data-index="8">GD</th>
+									<th class="standing-table__cell standing-table__header-cell" data-label="pts" data-sort-value="use-attribute" data-index="9">Pts</th>
+									<!-- <th class="standing-table__cell standing-table__header-cell is-hidden--bp15 is-hidden--bp35 " data-sort-value="use-attribute" data-index="10">Last 6</th> -->
+								  </tr>
+								</thead>
+							  
+								<tbody>
+									{% for info in league %}
+										<tr class="standing-table__row">
+											<td class="standing-table__cell">{{info.pos}}</td>
+											<td class="standing-table__cell standing-table__cell--name" data-short-name="{{info.team}}" data-long-name="{{info.team}}">
+									
+													<a href="{{info.team_url}}" class="standing-table__cell--name-link" style="color: black;">{{info.team}}</a>
+											
+											</td>
+											<td class="standing-table__cell">{{info.P}}</td>
+											<td class="standing-table__cell is-hidden--bp35">{{info.P}}</td>
+											<td class="standing-table__cell is-hidden--bp35">{{info.W}}</td>
+											<td class="standing-table__cell is-hidden--bp35">{{info.D}}</td>
+											<td class="standing-table__cell is-hidden--bp35">{{info.L}}</td>
+											<td class="standing-table__cell is-hidden--bp35">{{info.F}}</td>
+											<td class="standing-table__cell">{{info.GD}}</td>
+											<td class="standing-table__cell" data-sort-value="1">{{info.Pts}}</td>
+										</tr>
+								  	{% endfor %}  
+								</tbod>
+							</table>
+						</div>	
+					</div>
+				</div>	
+			</div>	
+		</main>
+		<!--************************************
+				Main End
+		*************************************-->
+{% endblock %}

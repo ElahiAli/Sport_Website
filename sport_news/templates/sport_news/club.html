@@ -1,0 +1,319 @@
+{% extends 'sport_news/base.html' %}
+{% load static %}
+
+{% block content %}
+<!--************************************
+				Banner Start
+		*************************************-->
+		<div class="tg-banner tg-haslayout">
+			<div class="tg-imglayer">
+				<img src="{% static 'mysite/images/bg-pattran.png' %}" alt="image desctription">
+			</div>
+			<div class="container">
+				<div class="row">
+					<div class="tg-banner-content tg-haslayout">
+						<div class="tg-pagetitle">
+							<h1>Club</h1>
+						</div>
+						<ol class="tg-breadcrumb">
+							<li><a href="#">Home</a></li>
+							<li class="active">About Us / Club</li>
+						</ol>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--************************************
+				Banner End
+		*************************************-->
+		<!--************************************
+				Main Start
+		*************************************-->
+		<main id="tg-main" class="tg-main tg-haslayout">
+			<!--************************************
+					About Us Start
+			*************************************-->
+			<section class="tg-main-section tg-haslayout">
+				<div class="container">
+					<div class="tg-section-name">
+						<h2>Board</h2>
+					</div>
+					<div class="col-sm-11 col-xs-11 pull-right">
+						<div class="row">
+							<div class="tg-aboutussection">
+								<div class="row">
+									<div class="col-md-6 col-sm-12 col-xs-12">
+										<figure>
+											<img src="{% static 'mysite/images/0000.jpg' %}" alt="image description" height="321" width="570">
+										</figure>
+									</div>
+									<div class="col-md-6 col-sm-12 col-xs-12">
+										<div class="tg-contentbox">
+											<div class="tg-section-heading"><h2>Strategic Goals</h2></div>
+											<div class="tg-description">
+												<p>Borussia Dortmund pursues the strategic goal of positioning itself over the long term as
+													 a modern football company and establishing itself at the top level of the German national
+													  league. In all of its actions, Borussia Dortmund is guided by the principle of maximizing
+													   sporting success without piling up new debts. To pursue this strategic goal, we are always
+													    trying to increase the revenues coming in from marketing rights and increase the business
+														 results and thus the value of the company in a sustainable manner. In doing so, management
+														  keeps its social responsibilities towards the fans, club members, the city of Dortmund,
+														   and the region in mind. To do so, the economic foundation was expanded and strengthened
+														    with the sole marketing rights for "Signal Iduna Park," the strategic control of the
+															 "BVB" brand, and the further development of football related fields of business.
+															  In the future, the core business will remain professional football with its
+															   classic pillars of revenue: games, TV marketing, advertising, retail, and
+															    transfers. These goals serve as the basis for the management of the company.</p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!--************************************
+					About Us End
+			*************************************-->
+			<!--************************************
+					Statistics Start
+			*************************************-->
+			<section class="tg-main-section tg-haslayout tg-bgdark">
+				<div class="container">
+					<div class="row">
+						<div class="col-sm-12 col-xs-12">
+							<div class="tg-statistics">
+								<div class="tg-statistic tg-goals">
+									<a href="{% url 'sport_news:about_us' %}"><h3>About us </h3></a>
+								</div>
+
+								<div class="tg-statistic tg-activeplayers">
+									<a href="{% url 'sport_news:academy' %}"><h3>Academy</h3></a>
+								</div>
+								
+								<div class="tg-statistic tg-activeteams">
+									<a href="{% url 'sport_news:team' %}"><h3>Team</h3></a>
+								</div>
+								
+								<div class="tg-statistic tg-earnedawards">
+									<a href="{% url 'sport_news:contact' %}"><h3>Contact</h3></a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!--************************************
+					Statistics End
+			*************************************-->
+			<!--************************************
+					among people Start
+			*************************************-->
+			<section class="tg-main-section tg-haslayout">
+				<div class="container">
+					<div class="tg-section-name">
+						<h2>people</h2>
+					</div>
+					<div class="col-sm-11 col-xs-11 pull-right">
+						<div class="row">
+							<div class="tg-prohistory tg-border-top tg-haslayout">
+								<div class="row">
+									{% for info in video %}
+										<div class="col-md-3 col-sm-6 col-xs-6">
+											<article class="tg-post">
+												<figure class="tg-postimg">
+													<a class="tg-playbtn" href="{{info.video_url}}?iframe=true" data-rel="prettyPhoto[iframe]"></a>
+													<img src="{% static 'mysite/images/dortmund.jpg' %}" alt="image description">
+													<figcaption>
+														<ul class="tg-postmetadata">
+															<li><a href="#">posted on {{info.date}}</a></li>
+														</ul>
+													</figcaption>
+												</figure>
+												<div class="tg-posttitle">
+													<h3><a href="#">{{info.title}}</a></h3>
+												</div>
+												<div class="tg-description">
+													<p>{{info.description}}</p>
+												</div>
+											</article>
+										</div>
+									{% endfor %}
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!--************************************
+					among people End
+			*************************************-->
+			<!--************************************
+					pro group image Start
+			*************************************-->
+			<section class="tg-videobox tg-haslayout">
+				<figure>
+					<img src="{% static 'mysite/images/5421.jpg' %}" alt="image description">
+					
+				</figure>
+			</section>
+			<!--************************************
+					pro group image End
+			*************************************-->
+			<!--************************************
+					history Start
+			*************************************-->
+			<section class="tg-main-section tg-paddingbottom-zero tg-haslayout">
+				<div class="container">
+					<div class="tg-section-name">
+						<h2>history</h2>
+					</div>
+					<div class="col-sm-11 col-xs-11 pull-right">
+						<div class="col-sm-8">
+							<div class="tg-contactinfobox">
+								
+									
+										<div class="tg-section-heading"><h2>Borussia Dortmund</h2></div>
+											<div class="tg-description">
+												<p>Dortmund was founded in 1909, by a group of eighteen youths unhappy with the local chaplain's
+													 treatment of their church-sponsored football team. Being a relatively small club, Dortmund's
+													  ambitions were moderate to start with. The club barely avoided bankruptcy in 1929, and
+													   being an anti-Nazi oriented club during the Third Reich regime certainly didn't help
+													    matters. Their first taste of silverware came in the mid-50s, with two consecutive
+														 national titles in 1956 and 1957.
+
+													Having proved themselves by winning the last German national championship ever held (1963),
+													 Dortmund were among the sixteen clubs invited to play in the newly-formed Bundesliga.
+													  In general, the 60s were a fruitful period for the club, which claimed its first DFB-Pokal
+													   in 1965 and its first and only Cup Winners' Cup the following year. This would be their
+													    last trophy for a while, as the next three decades were fraught with continual financial
+														 troubles.</p>
+											</div>
+										
+									
+								
+								<div class=""> <a class="" href="#"><span>.</span></a> </div>	
+							</div>
+						</div>		
+					</div>
+				</div>					
+			</section>	
+			<!--************************************
+					history End
+			*************************************-->
+			<!--************************************
+					building Start
+			*************************************-->
+			<section class="tg-main-section tg-soccermedia tg-haslayout">
+				<div id="tg-soccermediascrollbar" class="tg-soccermediascrollbar">
+					<div id="filter-masonry" class="tg-soccermedia-content tg-haslayout">
+						<div class="masonry-grid bundesliga">
+							<div class="tg-project">
+								<figure class="tg-postimg">
+									<img src="{% static 'mysite/images/101.jpg' %}" alt="image description">
+									<figcaption>
+										<a class="tg-theme-tag" data-rel="prettyPhoto[iframe]" href="{% static 'mysite/images/101.jpg' %}"><i class="fa fa-image"></i></a>
+										<a class="tg-theme-tag">in 2014</a>
+										<h3>Dream</h3>
+									</figcaption>
+								</figure>
+							</div>
+						</div>
+						<div class="masonry-grid bundesliga">
+							<div class="tg-project">
+								<figure class="tg-postimg">
+									<img src="{% static 'mysite/images/102.jpg' %}" alt="image description">
+									<figcaption>
+										<a class="tg-theme-tag" data-rel="prettyPhoto[iframe]" href="{% static 'mysite/images/102.jpg' %}"><i class="fa fa-image"></i></a>
+										<a class="tg-theme-tag">in 2020</a>
+										<h3>Standing</h3>
+									</figcaption>
+								</figure>
+							</div>
+						</div>
+						<div class="masonry-grid championship">
+							<div class="tg-project">
+								<figure class="tg-postimg">
+									<img src="{% static 'mysite/images/104.jpg' %}" alt="image description">
+									<figcaption>
+										<a class="tg-theme-tag" data-rel="prettyPhoto[iframe]" href="{% static 'mysite/images/104.jpg' %}"><i class="fa fa-image"></i></a>
+										<a class="tg-theme-tag">in 2020</a>
+										<h3>Signal Iduna Park</h3>
+									</figcaption>
+								</figure>
+							</div>
+						</div>
+						
+						<div class="masonry-grid laliga">
+							<div class="tg-project">
+								<figure class="tg-postimg">
+									<img src="{% static 'mysite/images/105.jpg' %}" alt="image description">
+									<figcaption>
+										<a class="tg-theme-tag" data-rel="prettyPhoto[iframe]" href="{% static 'mysite/images/105.jpg' %}"><i class="fa fa-image"></i></a>
+										<a class="tg-theme-tag">in 2020</a>
+										<h3>Light for presentation and retail</h3>
+									</figcaption>
+								</figure>
+							</div>
+						</div>
+						<div class="masonry-grid laliga">
+							<div class="tg-project">
+								<figure class="tg-postimg">
+									<img src="{% static 'mysite/images/106.jpg' %}" alt="image description">
+									<figcaption>
+										<a class="tg-theme-tag" data-rel="prettyPhoto[iframe]" href="{% static 'mysite/images/106.jpg' %}"><i class="fa fa-image"></i></a>
+										<a class="tg-theme-tag">in 2020</a>
+										<h3>Something nice to end your day</h3>
+									</figcaption>
+								</figure>
+							</div>
+						</div>
+						<div class="masonry-grid laliga">
+							<div class="tg-project">
+								<figure class="tg-postimg">
+									<img src="{% static 'mysite/images/107.jpg' %}" alt="image description">
+									<figcaption>
+										<a class="tg-theme-tag" data-rel="prettyPhoto[iframe]" href="{% static 'mysite/images/107.jpg' %}"><i class="fa fa-image"></i></a>
+										<a class="tg-theme-tag">in 2016</a>
+										<h3>Borussia Dortmund</h3>
+									</figcaption>
+								</figure>
+							</div>
+						</div>
+						<div class="masonry-grid laliga">
+							<div class="tg-project">
+								<figure class="tg-postimg">
+									<img src="{% static 'mysite/images/109.jpg' %}" alt="image description">
+									<figcaption>
+										<a class="tg-theme-tag" data-rel="prettyPhoto[iframe]" href="{% static 'mysite/images/109.jpg' %}"><i class="fa fa-image"></i></a>
+										<a class="tg-theme-tag">in 2020</a>
+										<h3>BVB Fan</h3>
+									</figcaption>
+								</figure>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!--************************************
+					building End
+			*************************************-->
+			<!--************************************
+					stadium image Start
+			*************************************-->
+			<section class="tg-videobox tg-haslayout">
+				<figure>
+					<img src="{% static 'mysite/images/Signal Iduna Park.jpg' %}" style="margin-right: 45px;" alt="image description">
+				</figure>
+			</section>
+			<!--************************************
+					stadium image End
+			*************************************-->	
+			
+			
+		</main>
+		<!--************************************
+				Main End
+		*************************************-->
+{% endblock %}

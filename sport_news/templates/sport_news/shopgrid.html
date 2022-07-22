@@ -1,0 +1,170 @@
+{% extends 'sport_news/base.html' %}
+{% load static %}
+
+{% block content %}
+		<!--************************************
+				Banner Start
+		*************************************-->
+		<div class="tg-banner tg-haslayout">
+			<div class="tg-imglayer">
+				<img src="{% static 'mysite/images/bg-pattran.png' %}" alt="image desctription">
+			</div>
+			<div class="container">
+				<div class="row">
+					<div class="tg-banner-content tg-haslayout">
+						<div class="tg-pagetitle">
+							<h1>online shop</h1>
+						</div>
+						<ol class="tg-breadcrumb">
+							<li><a href="#">Home</a></li>
+							<li class="active">online shop</li>
+						</ol>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--************************************
+				Banner End
+		*************************************-->
+		<!--************************************
+				Main Start
+		*************************************-->
+		<main id="tg-main" class="tg-main tg-haslayout">
+			<div class="container">
+				<div class="row">
+					<div id="tg-twocolumns" class="tg-twocolumns tg-main-section tg-haslayout">
+						<div class="col-md-9 col-sm-8 col-xs-12 pull-right">
+							<div class="tg-shophead">
+								<ul class="tg-shopviewnav">
+								</ul>
+							</div>
+							<div class="th-products">
+								<div class="row">
+									{% for info in all %}
+										<div class="col-md-4 col-sm-6 col-xs-6">
+											<div class="tg-product">
+												<figure class="tg-productimg">
+													<img src="{{info.image.url}}" alt="image description">
+													<figcaption>
+														<a class="tg-btncart" href="{% url 'sport_news:shop-list' info.id %}"><i class="fa fa-shopping-cart"></i></a>
+													</figcaption>
+												</figure>
+												<div class="tg-productinfo">
+													<a class="tg-theme-tag" href="{% url 'sport_news:shop-list' info.id %}">{{info.tag}}</a>
+													<div class="tg-producttitle"><h2><a href="{% url 'sport_news:shop-list' info.id %}">{{info.title}}</a></h2></div>
+													{% if info.last_price %}
+													<span class="tg-price" style="color: green;"><del style="color: red;">$ {{info.last_price}}</del> / ${{info.price}}</span>
+													{% else %}
+													<span class="tg-price" >${{info.price}}</span>
+													{% endif %}
+												</div>
+											</div>
+										</div>
+									{% endfor %}
+									
+								</div> 
+								 <ul class="tg-pagination">
+								</ul>
+							</div>
+						</div>
+						<div class="col-md-3 col-sm-4 col-xs-12">
+							<aside id="tg-sidebar" class="tg-sidebar">
+								<div class="tg-widget tg-search">
+									<form class="form-search" action="{% url 'sport_news:search' %}" method="post" >
+										{% csrf_token %}
+										<fieldset>
+											<input type="search" placeholder="Search Here" name="q" class="form-control" >
+											<button type="submit"><i class="fa fa-search"></i></button>
+										</fieldset>
+									</form>
+								</div>   <!---->
+								
+								<div class="tg-widget tg-catagories-widget">
+									<h3>catagories</h3>
+									<ul>
+										<li>
+											<a href="https://www.amazon.com/Learning-Web-Design-Beginners-JavaScript/dp/1449319270"><em>Web Design</em></a>
+										</li>
+										<li>
+											<a href="https://www.coursera.org/browse/business/marketing"><em>Marketing</em></a>
+										</li>
+										<li>
+											<a href="https://www.freecodecamp.org/news/learn-backend-development/"><em>Backend</em></a>
+										</li>
+										<li>
+											<a href="https://www.coursera.org/specializations/graphic-design"><em>Graphic Design</em></a>
+										</li>
+										<li>
+											<a href="https://www.learnhowtobecome.org/photographer/"><em>Photography</em></a>
+										</li>
+										<li>
+											<a href="https://www.udemy.com/courses/business/e-commerce/"><em>eCommerce</em></a>
+										</li>
+										<li>
+											<a href="https://www.freecodecamp.org/news/html-css-11-hour-course/"><em>Html</em></a>
+										</li>
+									</ul>
+								</div>
+								<div class="tg-widget tg-mostcommented-widget">
+									<h3>Hot News</h3>
+									<ul>
+										{% for data in hot %}
+											<li>
+												<figure>
+													<a href="{% url 'sport_news:blogdetail' data.id %}">
+														<img src="{{data.image.url}}" alt="image description">
+													</a>
+												</figure>
+												<div class="tg-posttitle">
+													<h3><a href="{% url 'sport_news:blogdetail' data.id %}">{{data.title}}</a></h3>
+													<!-- <span>500 Comments</span> -->
+												</div>
+											</li>
+										{% endfor %}
+									</ul>
+								</div>
+								<div class="tg-widget">
+									<h3>products</h3>
+									<div class="tg-slideshow-widget tg-haslayout">
+										<div id="tg-slideshow-slider" class="tg-slideshow-slider tg-haslayout">
+											<div class="swiper-wrapper">
+												{% for i in all %}
+													<div class="swiper-slide">
+														<figure class="tg-postimg">
+															<a href="{% url 'sport_news:shop-list' i.id %}">
+															<img src="{{i.image.url}}" alt="image description">
+															</a>
+														</figure>
+													</div>
+												{% endfor %}
+											</div>
+											<div class="swiper-pagination tg-pagination-slider"></div>
+											<div class="tg-themebtnnext"><span class="fa fa-angle-down"></span></div>
+											<div class="tg-themebtnprev"><span class="fa fa-angle-up"></span></div>
+										</div>
+									</div>
+								</div>
+								<div class="tg-widget tg-tags-widget">
+									<h3>popular tags</h3>
+									<ul>
+										<li><a class="tg-btn" href="#">fashion</a></li>
+										<li><a class="tg-btn" href="#">travel</a></li>
+										<li><a class="tg-btn" href="#">sports</a></li>
+										<li><a class="tg-btn" href="#">blog</a></li>
+										<li><a class="tg-btn" href="#">magazine</a></li>
+										<li><a class="tg-btn" href="#">fun time</a></li>
+										<li><a class="tg-btn" href="#">ui</a></li>
+										<li><a class="tg-btn" href="#">tech</a></li>
+										<li><a class="tg-btn" href="#">soccer</a></li>
+									</ul>
+								</div>
+							</aside>
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>
+		<!--************************************
+				Main End
+		*************************************-->
+{% endblock %}

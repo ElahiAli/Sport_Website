@@ -1,0 +1,201 @@
+{% extends 'sport_news/base.html' %}
+{% load static %}
+
+{% block content %}
+	<!--************************************
+				Banner Start
+		*************************************-->
+		<div class="tg-banner tg-haslayout">
+			<div class="tg-imglayer">
+				<img src="{% static 'mysite/images/bg-pattran.png' %}" alt="image desctription">
+			</div>
+			<div class="container">
+				<div class="row">
+					<div class="tg-banner-content tg-haslayout">
+						<div class="tg-pagetitle">
+							<h1>About us / Academy</h1>
+						</div>
+						<ol class="tg-breadcrumb">
+							<li><a href="#">Home</a></li>
+							<li class="active">About us-Academy</li>
+						</ol>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--************************************
+				Banner End
+		*************************************-->
+        <!--************************************
+				Main Start
+		*************************************-->
+		<main id="tg-main" class="tg-main tg-haslayout">
+            <!--************************************
+                        Academy Start
+            *************************************-->
+			<section class="tg-main-section tg-haslayout">
+				<div class="container">
+					<div class="tg-section-name">
+						<h2>academy</h2>
+					</div>
+					<div class="col-sm-11 col-xs-11 pull-right">
+						<div class="row">
+							<div class="tg-topratedplayer tg-haslayout">
+								<div class="row">
+									<div class="col-md-7 col-sm-12 col-xs-12">
+										<div id="tg-playerscrollbar" class="tg-players tg-playerscrollbar">
+											{% for data in academy %}
+											<div class="tg-player">
+												<div class="col-sm-6 col-xs-6 pull-right">
+													<div class="tg-playcontent">
+														<a class="tg-theme-tag" href="#">{{data.post}}</a>
+														<h3><a href="#">{{data.full_name}}</a></h3>
+														<!-- <span class="tg-stars"><span></span></span> -->
+														<div class="tg-description">
+															<p>{{data.desctription}}</p>
+														</div>
+														<ul class="tg-socialicons">
+															<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+															<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+															<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+															<li><a href="#"><i class="fa fa-dribbble"	></i></a></li>
+														</ul>
+													</div>
+												</div>
+												<div class="col-sm-6 col-xs-6">
+													<figure>
+														<a href="#">
+															<img src="{{data.image.url}}" width="245" height="416" alt="{{data.full_name}}">
+														</a>
+													</figure>
+												</div>
+											</div>
+											{% endfor %}
+										</div>
+									</div>
+									<div class="col-md-5 col-sm-12 col-xs-12">
+										<div class="tg-contentbox">
+											<div class="tg-section-heading"><h2>Borussia Dortmund Youth Sector</h2></div>
+											<div class="tg-description">
+												<p>Borussia Dortmund Youth Sector is the youth set-up of Borussia Dortmund. The club operates the 
+													system for boys from the age of nine upwards and a total of 15 youth teams. Home games are staged at the club's training ground Hohenbuschei.
+													<a href="https://en.wikipedia.org/wiki/Borussia_Dortmund_Youth_Sector">Wikipedia</a>
+												</p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!--************************************
+					Academy End
+			*************************************-->
+            <!--************************************
+					Statistics Start
+			*************************************-->
+			<section class="tg-main-section tg-haslayout tg-bgdark">
+				<div class="container">
+					<div class="row">
+						<div class="col-sm-12 col-xs-12">
+							<div class="tg-statistics">
+								<div class="tg-statistic tg-earnedawards">
+									<h3>YOUTH SECTOR VIDEOS</h3>
+								</div> 
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!--************************************
+					Statistics End
+			*************************************-->
+			<!--************************************
+					youth video Start
+			*************************************-->
+			<section class="tg-main-section tg-haslayout">
+				<div class="container">
+					<div class="tg-section-name">
+						<h2>pro soccer History</h2>
+					</div>
+					<div class="col-sm-11 col-xs-11 pull-right">
+						<div class="row">
+							<div class="tg-prohistory tg-border-top tg-haslayout">
+								<div class="row">
+									{% for info in video %}
+										<div class="col-md-3 col-sm-6 col-xs-6">
+											<article class="tg-post">
+												<figure class="tg-postimg">
+													<a class="tg-playbtn" href="{{info.video_url}}?iframe=true" data-rel="prettyPhoto[iframe]"></a>
+													<img src="{% static 'mysite/images/dortmund.jpg' %}" alt="image description">
+													<figcaption>
+														<ul class="tg-postmetadata">
+															<li><a href="#">posted on {{info.date}}</a></li>
+														</ul>
+													</figcaption>
+												</figure>
+												<div class="tg-posttitle">
+													<h3><a href="#">{{info.title}}</a></h3>
+												</div>
+												<div class="tg-description">
+													<p>{{info.description}}</p>
+												</div>
+											</article>
+										</div>
+									{% endfor %}
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!--************************************
+					youth video End
+			*************************************-->
+            <!--************************************
+					Blog Start
+			*************************************-->
+			<section class="tg-main-section tg-haslayout">
+				<div class="container">
+					<div class="col-sm-11 col-xs-11 pull-right">
+						<div class="row">
+							<div class="tg-blogpost">
+								<div class="row">
+									{% for info in news %}
+										<div class="col-sm-6 col-xs-12">
+											<article class="tg-post">
+												<figure class="tg-postimg">
+													<a href="#">
+														<img src="{{info.image.url}}" alt="image description" height="200" width="520">
+													</a>
+													<figcaption>
+														<ul class="tg-postmetadata">
+															<li><a href="#">by admin</a></li>
+														</ul>
+													</figcaption>
+												</figure>
+												<div class="tg-posttitle"><h3><a href="#">{{info.title}}</a></h3></div>
+												<div class="tg-description">
+													<p>{{info.explain|truncatewords:20}}</p>
+												</div>
+												<a class="tg-btn" href="{% url 'sport_news:blogdetail' info.id %}">Read more</a>
+											</article>
+										</div>
+									{% endfor %}
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!--************************************
+					Blog End
+			*************************************-->
+		</main>
+		<!--************************************
+				Main End
+		*************************************-->
+
+{% endblock %}

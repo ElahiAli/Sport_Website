@@ -1,0 +1,119 @@
+{% extends 'sport_news/base.html' %}
+{% load static %}
+
+{% block content %}
+		<!--************************************
+				Banner Start
+		*************************************-->
+		<div class="tg-banner tg-haslayout">
+			<div class="tg-imglayer">
+				<img src="{% static 'mysite/images/bg-pattran.png' %}" alt="image desctription">
+			</div>
+			<div class="container">
+				<div class="row">
+					<div class="tg-banner-content tg-haslayout">
+						<div class="tg-pagetitle">
+							<h1>Latest Blog / News</h1>
+						</div>
+						<ol class="tg-breadcrumb">
+							<li><a href="#">Home</a></li>
+							<li class="active">Searched / News</li>
+						</ol>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--************************************
+				Banner End
+		*************************************-->
+		<!--************************************
+				Main Start
+		*************************************-->
+		<main id="tg-main" class="tg-main tg-haslayout">
+			<div class="tg-main-section tg-haslayout">
+				<div class="container">
+					<div class="row">
+						<div class="tg-section-name">
+							<h2>Searched</h2>
+						</div>
+						<div id="tg-twocolumns" class="tg-twocolumns tg-haslayout">
+							<div class="col-sm-11 col-xs-11 pull-right">
+								<div class="row">
+									<div class="col-md-9 col-sm-8 col-xs-12 pull-left">
+										<div class="tg-blogpost tg-blogpostgrid">
+											<!--************************************
+														news search Start
+											*************************************-->
+											<center>
+												{% if searched %}
+													{% for res in result %}
+														<div class="col-md-6 col-sm-12 col-xs-12">
+															<article class="tg-post">
+																<figure class="tg-postimg">
+																	<a href="#">
+																		<img src="{{res.image.url}}" alt="image description" height="200" width="370"> 
+																	</a>
+																	<figcaption>
+																		<ul class="tg-postmetadata">
+																			<li><a href="#">by admin</a></li>
+																			<li><a href="#">04 comments</a></li>
+																			<li><a href="#">lifestyle</a></li>
+																		</ul>
+																	</figcaption>
+																</figure>
+																<div class="tg-posttitle"><h3><a href="#"></a>{{res.title}}</h3></div>
+																<div class="tg-description">
+																	<p>{{res.description}}</p>
+																</div>
+																<a class="tg-btn" href="{% url 'sport_news:blogdetail' res.id %}">Read more</a>
+															</article>
+														</div>
+													{% endfor %}
+												{% else %}
+													<h1>you forget to search.</h1>	
+												{% endif %}	
+											</center>
+											<!--************************************
+														news search Start
+											*************************************-->
+											<!--************************************
+														product search Start
+											*************************************-->
+											<div class="th-products">
+												<div class="row">
+													{% for info in product_search %}
+														<div class="col-md-4 col-sm-6 col-xs-6">
+															<div class="tg-product">
+																<figure class="tg-productimg">
+																	<img src="{{info.image.url}}" alt="image description">
+																	<figcaption>
+																		<a class="tg-btncart" href="{% url 'sport_news:shop-list' info.id %}"><i class="fa fa-shopping-cart"></i></a>
+																	</figcaption>
+																</figure>
+																<div class="tg-productinfo">
+																	<a class="tg-theme-tag" href="{% url 'sport_news:shop-list' info.id %}">{{info.tag}}</a>
+																	<div class="tg-producttitle"><h2><a href="{% url 'sport_news:shop-list' info.id %}">{{info.title}}</a></h2></div>
+																	<div class="tg-productprice"><h3>$ {{info.price}}</h3></div>
+																	<!-- <span class="tg-stars"><span></span></span> -->
+																</div>
+															</div>
+														</div>
+													{% endfor %}	
+												</div> 
+											</div>
+											<!--************************************
+													news search Start
+												*************************************-->
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>
+		<!--************************************
+				Main End
+		*************************************-->
+{% endblock %}
