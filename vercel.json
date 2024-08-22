@@ -2,7 +2,7 @@
     "version": 2,
     "builds": [
       {
-        "src": "Sport_Website/wsgi.py",
+        "src": "mysite/wsgi.py",
         "use": "@vercel/python"
       }
     ],
@@ -10,7 +10,7 @@
 
       {
         "src": "/(.*)",
-        "dest": "Sport_Website/wsgi.py"
+        "dest": "mysite/wsgi.py"
       }
     ]
   }
