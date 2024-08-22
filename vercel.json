@@ -1,0 +1,16 @@
+{
+    "version": 2,
+    "builds": [
+      {
+        "src": "Sport_Website/wsgi.py",
+        "use": "@vercel/python"
+      }
+    ],
+    "routes": [
+
+      {
+        "src": "/(.*)",
+        "dest": "Sport_Website/wsgi.py"
+      }
+    ]
+  }
